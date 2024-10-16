@@ -1,45 +1,13 @@
-
 #include <stdio.h>
-
-int main(){
-	int i;
-	
-	printf("Enter a value for i :");
-	scanf("%d", &i);
-	
-	switch(i){
-		case 1:
-			printf("Sunday");
-			break;
-		
-		case 2:
-			printf("Monday");
-			break;
-			
-		case 3:
-			printf("Tuesday");
-			break;
-			
-		case 4:
-			printf("Wendnesday");
-			break;
-			
-		case 5:
-			printf("Thursday");
-			break;
-			
-		case 6:
-			printf("Friday");
-			break;
-			
-		case 7:
-			printf("Saturday");
-			break;
-			
-		default:
-			printf("Wrong number enter a number from 1 to 7");
-			break;
-	}
-	
-	return 0;
+int main()
+{
+    enum days {Sun = 1,Mon = 2,Tue = 3,Wed = 4,The = 5,Fri = 6,Sat = 7};
+    int today = Mon;
+    
+    if(today == Fri|| today == Sat)
+    {
+        printf("Today in weekend :)");
+    }else{
+        printf("I have to work today :(");
+    }
 }
