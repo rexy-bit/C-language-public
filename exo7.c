@@ -1,19 +1,18 @@
 #include <stdio.h>
 main(){
-	char* firstName[100], lastName[100], Section[100];
-
-    printf("\nEnter your first name : ");
-	scanf(" %s", &firstName);
+	float sec;
+	float min;
+	float hours;
 	
-	printf("\nEnter your last name : ");
-	scanf(" %s", &lastName)	;
+	printf("\nEnter time in seconds : ");
+	scanf("%f", &sec);
 	
-	printf("\nEnter your section : ");
-	scanf(" %s", &Section);
+	min = sec/60;
+	hours = sec/3600;
+	sec = sec;
 	
-	
-	printf("First name : %s\nLast name : %s\nSection : %s\n", firstName, lastName, Section);
-	
-	return 0;
+	printf("Minutes : %.2f,\nHours : %.2f,\nSeconds : %.2f", min, hours, sec);
 	
 }
+
+
