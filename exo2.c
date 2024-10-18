@@ -1,18 +1,19 @@
 #include <stdio.h>
 main(){
-	int x = 6,y = 6;
-	int i = ++x;
-	int j = y++;
 	
-	printf("X = %d, Y = %d\n", x, y);
-	printf("******************\n");
-	printf("X = %d, Y = %d, i = %d\n", x, y, i);
-	printf("******************\n");
-	printf("X = %d, Y = %d, i = %d, j = %d\n", x, y, i, j);
+	float larg;
+	float longe;
+	float s;
+	float p;
 	
+	printf("\nEnter larg : ");
+	scanf("%f", &larg);
 	
+	printf("\nEnter long : ");
+	scanf("%f", &longe);
 	
+	s= longe*larg;
+	p= (longe + larg)*2;
 	
-	
-	
+	printf("The surface is : %.2f\nThe perimeter is : %.2f", s, p);
 }
