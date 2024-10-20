@@ -1,22 +1,14 @@
 #include <stdio.h>
+
 main(){
-	int x;
-	int y;
-	int z;
+	float r;
+	float vol;
 	
-	printf("\nEnter a value for X : ");
-	scanf("%d", &x);
+	printf("\nEnter a value for r in meters : ");
+	scanf("%f", &r);
 	
-	printf("\nEnter a value for Y : ");
-	scanf("%d", &y);
+	vol = 4*3.14*r*r*r/3;
 	
-	printf("\nBefore switching X = %d, Y = %d", x, y);
+	printf("The volume is : %.2f meters cube", vol);
 	
-	z = x;
-	x = y;
-	y = z;
-	
-	printf("\nAfter switching X = %d, Y = %d", x, y);
-	
-    
 }

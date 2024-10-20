@@ -1,18 +1,20 @@
 #include <stdio.h>
 main(){
-	float sec;
-	float min;
-	float hours;
 	
-	printf("\nEnter time in seconds : ");
-	scanf("%f", &sec);
+	int A,B,T;
 	
-	min = sec/60;
-	hours = sec/3600;
-	sec = sec;
+	printf("\nEnter a value for A : ");
+	scanf("%d", &A);
 	
-	printf("Minutes : %.2f,\nHours : %.2f,\nSeconds : %.2f", min, hours, sec);
+	printf("\nEnter a value for B : ");
+	scanf("%d", &B);
+	
+	printf("\nBefore switch : \nA = %d,\nB = %d", A, B);
+	
+	T = A;
+	A = B;
+	B = T;
+	
+	printf("\nThe value of A is : %d,\nThe value of B is : %d", A, B);
 	
 }
-
-
