@@ -1,60 +1,56 @@
 #include <stdio.h>
+
 main(){
-	double num1;
-	double num2;
-	double result ;
+	
+	double num1, num2, result;
+	
 	char operator;
 	
-	printf("\nChoose an operator(+,-,/,*) : ");
+	printf("\nChoose an operator(+,-,*,/) : ");
 	scanf("%c", &operator);
+	
 	printf("\nEnter number 1 : ");
 	scanf("%lf", &num1);
 	
-	printf("\nEnter nuber 2 : ");
+	printf("\nEnter number 2 : ");
 	scanf("%lf", &num2);
 	
 	switch(operator){
-		case '+':
+		case '+' :
 			result = num1 + num2;
-			printf("The result is : %.2lf\n", result);
-			
+			printf("\nThe result is : %.2lf", result);
 			break;
 			
-		case '-':
+		case '-' :
 			result = num1 - num2;
-			printf("The result is : %.2lf\n", result);
+			printf("\nThe reuslt is : %.2lf", result);
 			break;
 			
-		case '*':
-			result = num1*num2;
-			printf("The result is : %.2lf\n", result );
-			
-			break;
-			
-		case '/':
-			if(num1 == 0 || num2 == 0){
-				printf("Math error impossible to devide by zero \n");
-			}else if(num1 != 0 && num2 != 0){
-				result = num1/num2;
-				printf("The result is : %.2lf\n", result);
-			}
-			
-			break;
-			
-		default:
-			printf("Math error : please verify that you entered the correct operator\n");
-			break;
-			
-			
-			
+		case '*' : 
+		     result = num1*num2;
+		     printf("\nThe result is : %.2lf", result);
+		     break;
+		     
+		    case '/':
+		    	if(num1 == 0 || num2 == 0){
+		    		printf("\nMath error impossuble to devide by 0");
+		    		
+				}else if (num1 != 0 && num2 != 0){
+					result = num1/num2;
+					printf("\nThe result is : %.2lf", result);
+					
+				}
+				
+				break;
+				
+				default :
+					printf("\nMath error : Invalid operator");
+					break;
+		    	
 	}
 	
-	printf("************************************\n");
 	
 	
-	printf("End of switch statement :) \n");
+	
+	
 }
-
-
-
-
