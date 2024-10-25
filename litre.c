@@ -1,28 +1,18 @@
 #include <stdio.h>
-int main()
-{
-    char unit;
-    double mesure;
 
-    printf("\nIs unit in litre (L) or square meter (S) ? :");
-    scanf("%c", &unit);
+main(){
+	double litres;
+	double ml;
+	double m3;
+	
+	printf("\nEnter the value in Litres : ");
+	scanf(" %lf", &litres);
+	
+	ml = litres*1000;
+	
+	m3 = litres/1000;
+	
+	printf("The value in litres is : %lf\nThe value in  ml in : %lf\nThe value in Square meters is : %lf\n", litres, ml, m3);
+	
 
-    if(unit == 'L')
-    {
-        printf("\nEnter mesure in meter :");
-        scanf("%lf", &mesure);
-        mesure = mesure / 1000;
-        printf("\nMesure in square meter is : %lf", mesure);
-    }else if(unit == 'S')
-      {
-        printf("\nEnter mesure in square meter :");
-        scanf("%lf", &mesure);
-        mesure = mesure * 1000;
-        printf("\nMesure in square meter in : %lf", mesure);
-      }else{
-        printf("\nInvalid unit");
-      }
-
-      
-    return 0;
 }
