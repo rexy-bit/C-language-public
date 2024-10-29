@@ -3,7 +3,7 @@
 
 main(){
 	
-	int h, m, s, t, d;
+	int h, m, s, t;
 	
 	printf("\nEnter the time in seconds : ");
 	scanf("%d", &t);
@@ -14,8 +14,5 @@ main(){
 	
 	s = (t%3600)%60;
 	
-	printf("\nThe time in hours minutes and seconds is : %dh : %dm : %ds", h, m, s);
-	
-	
-	
+	printf("\nThe time in hours, minutes and seconds is : %dh : %dm : %ds ", h, m, s);
 }
