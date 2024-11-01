@@ -1,33 +1,32 @@
 #include <stdio.h>
 
 int main(){
+
     int n;
-    float i, fact;
+    float fact, i;
 
-    printf("\nEntrez une valeur pour n : ");
-    scanf("%d", &n);
 
-    if(n < 0){
-        printf("\nOn ne peut pas afficher la factorial d'un nombre negatif");
+    printf("\nVeillez entrer un nombre entier positif : \n");
 
-        return 0;
+        scanf("%d", &n);
 
-    }else if(n == 0){
-        fact = 1;
-    }else if(n > 0){
+        if(n < 0){
+            printf("\nveillez entrez un nombre entier positif ");
 
-        fact = 1;
+            return 0;
+        }else if(n == 0){
+            printf("\nLe factoriel de %d est : 1", n);
 
-        for(i = 1;i<=n;i++){
-           fact = fact*i;
+            return 0;
         }
-    }
+   
+    fact = 1;
 
+    for(i = 1; i<= n; i++){
+        fact = fact*i;
+    }
+    
     printf("\nLa factoriel de %d est : %.2f", n, fact);
 
-    
-
-
-return 0;
-    
+    return 0;
 }
