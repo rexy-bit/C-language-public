@@ -1,26 +1,32 @@
 #include <stdio.h>
 
 int main(){
+    int n;
 
-    int n, i, S, j;
+    float j,i,S;
 
-    printf("\nEntrez un entier positif : ");
-    scanf("%d", &n);
+    do{
+          printf("\nVeillez entrez un entier n impaire : ");
+          scanf("%d", &n);
+    }while(n%2 == 0);
 
-    if(n < 0){
-        printf("\nEntrez un entier positif");
-    }else if(n >= 0){
+    j = 1;
+    S = 0;
 
-       j = 1;// j est pour les nombres impaires par contre i est pour le nombre de repetitions .
-       S = 0;
+    for(i = 1; i<= n; i++){
 
-       for(i = 1; i<= n; i++){
-         S = S + pow(j, 2);
-         j = j + 2;
-       }
+        S = S + pow(j, 2);
+        j = j + 2;
 
-       printf("\nLa somme des nombre impaires premiers est : %d", S);
+
     }
 
+    printf("\nLa somme des premiers %d entiers est : %.2f", n, S);
+
     return 0;
+
+    
+   
+
+
 }
