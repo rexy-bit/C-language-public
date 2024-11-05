@@ -1,20 +1,21 @@
 #include <stdio.h>
+#include <math.h>
 main(){
 	
-	int A,B,T;
 	
-	printf("\nEnter a value for A : ");
-	scanf("%d", &A);
+	int t,h,m,s,d;
 	
-	printf("\nEnter a value for B : ");
-	scanf("%d", &B);
+	printf("\nEnter the full time in seconds : ");
+	scanf("%d", &t);
 	
-	printf("\nBefore switch : \nA = %d,\nB = %d", A, B);
-	
-	T = A;
-	A = B;
-	B = T;
-	
-	printf("\nThe value of A is : %d,\nThe value of B is : %d", A, B);
-	
+    h = t/3600;
+    
+    d = t%3600;
+    
+    m = d/60;
+    
+    s = d%60;
+    
+    printf("\nThe %.2f in seconds , hours and minutes is : ", t);
+    printf("\n%d h : %d m : %d s", h, m, s);
 }

@@ -1,22 +1,15 @@
 #include <stdio.h>
 
 main(){
-	double num1;
-	double num2;
-	double sum, min, tim, div;
 	
+	int a,b,c,d;
 	
-	printf("\nEnter number 1 : ");
-	scanf("%lf", &num1);
+	float av;
 	
-	printf("\nEnter number 2 : ");
-	scanf("%lf", &num2);
+	printf("\nEnter a, b, c and d : ");
+	scanf("%d%d%d%d", &a, &b, &c, &d);
 	
-	sum = num1 + num2;
-	min = num1 - num2;
-	tim = num1*num2;
-	div = num1/num2;
+	av = (a + b + d + c)/4;
 	
-	printf("The addition is : %.2lf\n the substraction is : %.2lf\nThe multiplication is : %.2lf\n the division is : %.2lf", sum, min, tim, div);
-	
+	printf("The average of a,b,c,d is : %.2f", av);
 }

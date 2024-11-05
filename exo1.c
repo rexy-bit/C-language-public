@@ -1,18 +1,26 @@
 #include <stdio.h>
-main(){
-	char firstName[100];
-	char  lastName[100];
-	char section[100];
+
+int main(){
+
+	char name[100],firstName[100],section;
+	
+	int groupe;
 	
 	printf("\nEnter your first name : ");
 	scanf("%s", &firstName);
 	
-	printf("\nEnter your Last Name : ");
-	scanf("%s", &lastName);
+	printf("\nEnter your last name : ");
+	scanf("%s", &name);
 	
 	printf("\nEnter your section : ");
-	scanf("%s", &section);
+	scanf(" %c", &section);
 	
-	printf("****\nFirst Name : %s\nLast Name : %s\nSection : %s\n****", firstName, lastName, section);
+	printf("\nEnter your groupe : ");
+	scanf("%d", &groupe);
+	
+	printf("\nFirst name : %s,\nLast name : %s,\nSection : %c,\nGroupe : %d", name, firstName, section, groupe);
+	
+	
+	return 0;
 	
 }

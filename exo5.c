@@ -1,32 +1,16 @@
 #include <stdio.h>
-int main(){
+
+main(){
 	
-	float note1, note2, note3, note4, note5;
-	float sum, moy;
+	float s,p,r;
+	float pi = 3.14;
 	
-	printf("\nEntrez la note 1 : ");
-	scanf("%f", &note1);
+	printf("\nEnter a value for r : ");
+	scanf("%f", &r);
 	
-	printf("\nEntrez la note 2 : ");
-	scanf("%f", &note2);
+	s = 2*pi*pow(r, 2);
 	
-	printf("\nEntrez la note 3 : ");
-	scanf("%f", &note3);
+	p = 2*pi*r;
 	
-	printf("\nEntrez la note 4 : ");
-	scanf("%f", &note4);
-	
-	printf("\nEntrez la note 5 : ");
-	scanf("%f", &note5);
-	
-	sum = note1 + note2 + note3 + note4 + note5;
-	
-	printf("\nLa somme est : %.2f", sum);
-	
-	moy = sum/5;
-	
-	printf("\nLa moyenne est : %.2f", moy);
-	
-	return 0;
-	
+	printf("\nThe Surface is : %.2f, \nThe sirc is : %.2f", s,p);
 }

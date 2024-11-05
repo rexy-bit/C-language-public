@@ -1,16 +1,19 @@
 #include <stdio.h>
+
 main(){
-	int x;
-	int y;
-	int power;
+	  
+	   float deg;
+	   float rad;
+	   
+	   printf("\nEnter a number in deg : ");
+	   scanf("%f", &deg);
+	   
+	   rad = (deg*6.28)/360;
+	   
+	   printf("\n%.2f° in rad is : %.2f rad", deg, rad);
+	   
+	   
+	  
+	  
 	
-	printf("\nEnter a value for x : ");
-	scanf("%d", &x);
-	
-	printf("\nEnter a value for y : ");
-	scanf("%d", &y);
-	
-	power = pow(x,y);
-	
-	printf("\nX power Y is equal to : %d", power);
 }
