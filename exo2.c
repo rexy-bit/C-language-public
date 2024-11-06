@@ -1,13 +1,15 @@
 #include <stdio.h>
 
-main(){
-	
-	int x = 6;
-	int y = 6;
-	
-	int i = ++x; 
-	int j = y++;
-	
-	printf("\ni = %d,\nj = %d", i, j);
-	printf("\nx = %d, y = %d", x, y);
+int main(){
+
+    const double c = 2426555645;
+    double i = 1;
+
+    while(i*2 < c){
+        i *= 2;
+    }
+
+    printf("\nThe largest power of two less than %.2f is : %.2f", c, i);
+
+    return 0;
 }

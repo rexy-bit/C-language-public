@@ -2,25 +2,17 @@
 
 int main(){
 
-	char name[100],firstName[100],section;
-	
-	int groupe;
-	
-	printf("\nEnter your first name : ");
-	scanf("%s", &firstName);
-	
-	printf("\nEnter your last name : ");
-	scanf("%s", &name);
-	
-	printf("\nEnter your section : ");
-	scanf(" %c", &section);
-	
-	printf("\nEnter your groupe : ");
-	scanf("%d", &groupe);
-	
-	printf("\nFirst name : %s,\nLast name : %s,\nSection : %c,\nGroupe : %d", name, firstName, section, groupe);
-	
-	
-	return 0;
-	
+    int f;
+    float c;
+
+    for(f = 0;f<= 300;f += 10){
+         
+        c = (5/9)*(f - 32);
+        printf("\nThe temperature %d ferenheit in celsius is : %.2f celsius",f, c);
+    }
+
+    
+
+    return 0;
+
 }
