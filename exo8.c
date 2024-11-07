@@ -1,23 +1,22 @@
 #include <stdio.h>
 
 int main(){
-	int a;
-    int b;
-    
-    printf("\nEnter a value for a : ");
-    scanf("%d", &a);
-    
-    printf("\nEnter a value for b : ");
-    scanf("%d", &b);
-    
-    printf("\nThe values before switching are : a = %d, b = %d", a, b);
-    
-    a = b + a;
-    b = a - b;
-    a = a - b;
-    
-    printf("\nThe values after switching are : a = %d, b = %d ", a, b);
-    
+
+    int n,i,S;
+
+    do{
+        printf("\nEnter a positive integer : ");
+        scanf("%d", &n);
+    }while(n<0);
+
+    S = 0;
+
+    for(i = 1;i <= n;i++){
+          S = S + pow(i, 2);
+    }
+
+    printf("\nLa somme est : %d", S);
+
     return 0;
-    
+
 }
