@@ -1,47 +1,20 @@
 #include <stdio.h>
-
 int main(){
 
-    int i,s,n;
-/*
-    s = 0;
-    for(i = 0; i<4;i++){
+    int i,n,S;
 
-        printf("\nENter an integer number : ");
+   
+
+    S = 0;
+    i = 1;
+    do{
+        printf("\nVeillez entrer un entier : ");
         scanf("%d", &n);
+        S = S + n;
+        i++;
+    }while(i<=4);
 
-         s += n;
-    }
-
-    printf("\nThe sum is : %d", s);
-    */
-
-  /*s = 0;
-   i = 0;
-   while(i < 4){
-      printf("\nEnter the value of n : ");
-      scanf("%d", &n);
-
-      s += n;
-      i++;
-   }
-
-   //printf("\nThe sum is : %d", s);
-
-   */
-
-  s = 0;
-  i = 0;
-
-  do{
-    printf("\nEnter a positive integer n : ");
-    scanf("%d", &n);
-
-    s += n;
-    i++;
-  }while(i < 4);
-
-  printf("\nThe sum is : %d", s);
+    printf("\nThe final value of the sum is : %d", S);
 
     return 0;
 }

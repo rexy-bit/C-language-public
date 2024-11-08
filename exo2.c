@@ -2,14 +2,16 @@
 
 int main(){
 
-    const double c = 2426555645;
-    double i = 1;
+    const double c = 2436555645;
+    double i;
 
-    while(i*2 < c){
+    i = 1;
+
+    while(i*2<c){
         i *= 2;
-    }
+    };
 
-    printf("\nThe largest power of two less than %.2f is : %.2f", c, i);
+    printf("\nThe largest power of two less than %.2lf is : %.1lf", c, i);
 
     return 0;
 }

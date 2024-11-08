@@ -1,22 +1,25 @@
 #include <stdio.h>
-
 int main(){
 
-    int lines, i,r;
+    int i,n,r;
 
 
-    printf("\nEnter a number of lines that must be of course positive : ");
-    scanf("%d", &lines);
+        printf("\nEnter the number of repetitions : ");
+        scanf("%d", &n);
+    
 
-    for(i = 1; i <= lines; i++){
+    for(i = 1;i<=n;i++){
+
         for(r = 1;r<=i;r++){
-
             printf("*");
         }
 
+
         printf("\n");
+        
     }
 
     return 0;
-     
-    }
+
+    
+}
