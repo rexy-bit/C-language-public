@@ -1,15 +1,30 @@
 #include <stdio.h>
+#include <math.h>
 
-main(){
-	
-	int a,b,c,d;
-	
-	float av;
-	
-	printf("\nEnter a, b, c and d : ");
-	scanf("%d%d%d%d", &a, &b, &c, &d);
-	
-	av = (a + b + d + c)/4;
-	
-	printf("The average of a,b,c,d is : %.2f", av);
+int main(){
+
+    int i,N;
+    float f,max;
+
+    do{
+        printf("\nEnter a positive integer : ");
+        scanf("%d", &N);
+    }while(N<0);
+
+    max = 150*sin(0)/1;
+
+    for(i=0;i<N;i++){
+
+        f = 150*sin(i)/(1 + i);
+
+        if(max <= f){
+            max = f;
+        }
+
+        
+    }
+
+printf("\nLe max est : %.2f", max);
+
+
 }

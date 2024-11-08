@@ -1,23 +1,20 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 int main(){
-    int n,i;
+
+    int n, i;
     float Un;
 
-    do{
-        printf("\nEnter the number of terms n : ");
-        scanf("%d", &n);
-    }while(n < 0);
+    printf("\nEntrez le dernier terme de la suite : ");
+    scanf("%d", &n);
 
     Un = 1;
 
     for(i = 1;i <= n;i++){
-        Un = 2*(sqrt(Un + 1)) - 1;
-        
+        Un = 2*sqrt(Un + 1) - 1;
     }
 
-    printf("\nThe value of Un for n = %d is : %.2f", n, Un);
+    printf("\nLe dernier terme de la suite Un est / %.2f", Un);
 
     return 0;
 }
