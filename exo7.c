@@ -1,21 +1,26 @@
 #include <stdio.h>
-#include <math.h>
-main(){
-	
-	
-	int t,h,m,s,d;
-	
-	printf("\nEnter the full time in seconds : ");
-	scanf("%d", &t);
-	
-    h = t/3600;
-    
-    d = t%3600;
-    
-    m = d/60;
-    
-    s = d%60;
-    
-    printf("\nThe %.2f in seconds , hours and minutes is : ", t);
-    printf("\n%d h : %d m : %d s", h, m, s);
+
+int main(){
+
+    int i, n, fact;
+
+    do{
+        printf("\nPlease Enter a positive integer to begin the factoriel calculation : ");
+        scanf("%d", &n);
+    }while(n<0);
+
+    if(i == 0){
+        printf("\nThe fact of %d is always 1", n);
+    }else{
+
+        fact = 1;
+
+        for(i=1;i<=n;i++){
+            fact = fact*i;
+        }
+
+        printf("\nThe factoriel of %d is : %d", n, fact);
+    }
+
+    return 0;
 }

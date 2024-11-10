@@ -1,22 +1,21 @@
 #include <stdio.h>
+#include <math.h>
+
 
 int main(){
+    int i,n,sum;
 
-    int n,i,S;
+    printf("\nEnter a value for n : ");
+    scanf("%d", &n);
 
-    do{
-        printf("\nEnter a positive integer : ");
-        scanf("%d", &n);
-    }while(n<0);
+    sum = 0;
 
-    S = 0;
-
-    for(i = 1;i <= n;i++){
-          S = S + pow(i, 2);
+    for(i = 0; i<=n;i++){
+       sum = sum + pow(i, 3);
     }
 
-    printf("\nLa somme est : %d", S);
+
+    printf("\nThe sum is : %d", sum);
 
     return 0;
-
 }
