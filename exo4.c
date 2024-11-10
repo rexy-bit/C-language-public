@@ -3,28 +3,26 @@
 
 int main(){
 
-    int i,N;
-    float f,max;
+    int n,i;
 
-    do{
-        printf("\nEnter a positive integer : ");
-        scanf("%d", &N);
-    }while(N<0);
+    float max,f;
+
+    printf("\nEnter a value for n : ");
+    scanf("%d", &n);
 
     max = 150*sin(0)/1;
 
-    for(i=0;i<N;i++){
-
-        f = 150*sin(i)/(1 + i);
+    for(i = 0; i<=n; i++){
+        f = 150*sin(i)/(i + 1);
 
         if(max <= f){
             max = f;
-        }
 
-        
+        }
     }
 
-printf("\nLe max est : %.2f", max);
+    printf("\nThe maximum value for n is : %.2f", max);
 
+    return 0;
 
 }
