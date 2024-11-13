@@ -1,24 +1,19 @@
 #include <stdio.h>
 
-
 int main(){
-    int age,i;
-    float sum;
+    int age, i, t;
 
-    printf("\nVEillez entrez l'age de amal : ");
+    printf("\nVeillez entrer l'age de Amal : ");
     scanf("%d", &age);
 
-    sum = 0;
+    t = 0;
 
     for(i = 1; i <= age; i++){
-        sum = sum + 500 + 3*age;
+        t = t + 500 + 3*i;
     }
 
-
-
-    printf("\nLa somme d'argent dans le compte est : %.2f", sum);
+    printf("\nLa somme totale dans le comte bancaire de Amal est : %d ", t);
 
     return 0;
-    
 
 }
