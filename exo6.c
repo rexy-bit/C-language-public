@@ -1,23 +1,37 @@
 #include <stdio.h>
 
 int main(){
+    
+    int a,b;
+    printf("\nEnter two integers a & b : ");
+    scanf("%d %d", &a, &b);
 
-    int i,n,sum;
+    if(a<0){
+        a = -a;
+    }
 
-    sum = 0;
-    i = 0;
+    if(b<0){
+        b = -b;
+    }
 
-    do{
+    if( a == 0){
+        printf("\nPGCD(a, b) = %d", a);
+    }
 
-        printf("\nEnter a positive integer : ");
-        scanf("%d", &n);
+    if(b == 0){
+        printf("\nPGCD(a, b) = %d", b);
+    }
 
-        sum = sum + n;
+    while(a!=b){
+        if(a>b){
+            a = a - b;
+        }else{
+            b = b -a;
+        }
+}    
+      
+      printf("\nPGCD(a, b) = %d", a);
 
-        i++;
-    }while(i<4);
-
-    printf("\nThe sum is : %d", sum);
-
-    return 0;
+      return 0;
+    
 }

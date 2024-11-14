@@ -2,31 +2,23 @@
 
 int main(){
 
-    int a,n,i,cpt;
-    float f;
+    int a,b,p,PGCD;
 
-    do{
-        printf("\nEnter a positive integer n : ");
-        scanf("%d", &n);
-    }while(n<0);
+    printf("\nEntrez deux nombres a et b : ");
+    scanf("%d %d", &a, &b);
 
-    printf("\nEnter a positive integer a : ");
-    scanf("%d", &a);
-
-    cpt = 0;
-
-    for(i = 0; i<= n; i++){
-        f = 150*sin(i)/(1 + i);
-
-        if(f >= -a && f <= a){
-            cpt++;
-        }
-
-        
-
+    p = 0;
+    while(p != 0){
+        p = a - b;
+        a = b;
+        b = p;
+        PGCD = b;
     }
 
-    printf("\nThe number of values of f(i) in [-%d, %d] is : %d", a, a, cpt);
+    
+
+    printf("\nPGCD(%d , %d) est : %d", a,b,PGCD);
+
 
     return 0;
 }
