@@ -1,230 +1,197 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include <stdbool.h>
 
-void exo1(){
-	
-    printf("\nExercice 1 : ");
-	
-	
-	int f;
-	float c;
-	
-	for(f = 0; f<= 300; f+= 10){
-		c = (5.0/9.0)*(f - 32);
-		
-		printf("\n\n%d in ferenheit is : %.2f celsius ", f, c);
-	}
-	
+int exo1(){
+    int n,i,s;
+
+    do{
+    printf("\nVeillez entrez un entier n : ");
+    scanf("%d", &n);
+    }while(n<0);
+
+    s = 0;
+    for(i = 0;i<=n;i++){
+        s = s+i;
+    }
+
+    printf("\nLa somme des %d premiers entiers est : %d", n, s);
+
+
+    return 0;
 }
 
+int exo2(){
 
-void exo2(){
-	
-	printf("\nExercice 2 : ");
-	
-	const double c = 2426555645;
-	
-	double i;
-	
-	i = 1;
-	
-	while(i*2<c){
-		i *= 2;
-	};
-	
-	printf("\n\nThe largest power of 2 less than is : %.2lf", i);
+    int p,n,k,i;
+
+    do{
+        printf("\nVeillez entrez deux entiers n et k : ");
+        scanf("%d %d", &n, &k);
+    }while(n<0 || k<0);
+
+
+    if(k==0 || n==0){
+        p = 0;
+    }
+
+    if(k == n){
+        p = n;
+    }
+
+    p = 1;
+
+    if(n<k){
+
+        for(i = n;i<=k;i++){
+            p *=i;
+        }
+    }
+    if(k<n){
+
+
+        for(i=k;i<=n;i++){
+            p *=i;
+        }
+    }
+
+    printf("\nLe produit des entiers entre n et k est : %d", p);
+
+    return 0;
 }
 
-void exo3(){
-	
-	printf("\n\n\n\nExo3 : ");
-	
-	int n,i;
-	float Un;
-	
-	printf("\nEnter a number n for the last term of the sequence : ");
-	scanf("%d", &n);
-	
-	
-	
-	if(n==0){
-		printf("\nU0 = 1");
-	}else{
-		Un = 1;
-		for(i = 1;i<=n;i++){
-			
-			Un = 2*sqrt(Un + 1) - 1;
-		}
-		
-		printf("\nThe term %d of the sequence Un is : %.2f", n, Un);
-	}
-	
+int exo3(){
+    int n,k,i,S;
+
+    do{
+        printf("\nEntrez deux entiers n et k : ");
+        scanf("%d %d", &n, &k);
+    }while(n<0 | k<0);
+
+    S = 0;
+
+    for(i = n;i<=k;i++){
+        if(i%2 != 0){
+            S += i;
+        }
+
+    }
+
+    printf("\nLa somme des entiers impaires entre %d et %d est : %d", n, k,S);
+
+    return 0;
 }
 
+int exo4(){
 
+    int n,S,i;
 
-void exo4part1(){
-	printf("\n\n\nExercise 4 : ");
-	
-	int i,n;
-	float f, max;
-	
-	printf("\nEnter a value for n : ");
-	scanf("%d", &n);
-	
-	max = 150*sin(0)/(i + 1);
-	
-	for(i=0;i<=n-1;i++){
-		f = 150*sin(i)/(i + 1);
-		
-		if(f > max){
-			max = f;
-		}
-	}
-	
-	printf("\nLe maximum de f est : %.2f", max);
-	
+    printf("\nEntrez un entier n : ");
+    scanf("%d", &n);
 
+    S = 0;
+
+    while(n!=0){
+        S = S+n;
+        printf("\nEntrez un entier n : ");
+        scanf("%d", &n);
+    }
+
+    printf("\nLa somme des entier entres est : %d", S);
+
+    return 0;
 }
 
-exo4part2(){
-	
-	printf("\n\n\nExercise 3 : ");
-	int a,n,i,j;
-	float f;
-	
-	printf("\nEnter a value for n : ");
-	scanf("%d", &n);
-	
-	printf("\nEnter a value for a : ");
-	scanf("%d", &a);
-	
-	j = 0;
-	
-	for(i = 0;i<=n-1; i++){
-		f = 150*sin(i)/(i + 1);
-		
-		if(f >= -a && f <= a){
-			j++;
-		}
-		
-	}
-	
-	printf("\nThe number of values of the function f in [-%d , %d] are : %d", a, a, j);
+int exo33(){
+
+    int S,max , min, n,op,cpt;
+    float moy;
+
+    printf("\nEntrez un entier n : ");
+    scanf("%d", &n);
+
+    min= n;
+    max = n;
+    op = 0;
+    S = 0;
+    moy = 0;
+
+    while(n!=0){
+        if(min>n){
+            min = n;
+
+        }else if(max<n){
+            max = n;
+        }
+
+        S += n;
+        cpt++;
+
+        printf("\nEntrez un autre entier n que vous souhaitez (tapez 0 si vous voulez arreter l'operation) : ");
+        scanf("%d", &n);
+        
+    }
+
+    moy = S/cpt;
+
+    printf("\nTapez 1 pour afficher min\nTapez 2 pour afficher max\nTapez 3 pour afficher la moyenne des nombres entres : ");
+    scanf("%d", &op);
+
+    switch(op){
+        case 1 : printf("\nLe min est : %d", min);
+        break;
+        case 2: printf("\nLe max est : %d", max) ;
+         break;
+
+         case 3 : printf("\nLa moyenne est : %d", moy);
+         break;
+
+         default : 
+         printf("\nErreur");
+         break;
+
+    }
+  printf("\n\n");
+    printf("\n******************");
+    printf("\nFin");
+    printf("\n******************");
+
+    return 0;
 }
 
+int exo44(){
+    int n,d,i;
+    bool p = true;
 
- void exo5(){
- 	printf("\n\n\nExercise 5 : ");
- 	
- 	int lines, i,j;
- 	
- 	printf("\nEnter the number of lines you want to draw : ");
- 	scanf("%d", &lines);
- 	
- 	for(i = 1;i<=lines;i++){
- 		for(j=1;j<=i;j++){
- 			printf("*");
-		 }
-		 
-		 printf("\n");
- 		
-	 }
- }
- 
- void exo6(){
- 	printf("\n\n\nExercise 6 : ");
- 	
- 	int i,n,S;
- 	
- 	S = 0;
- 	i=0;
- 	
- 	do{
- 		printf("\nEnter an integer n : ");
- 		scanf("%d", &n);
- 		
- 		S += n;
- 		
- 		i++;
-	 }while(i<4);
-	 
-	 printf("\nThe sum is : %d", S);
- }
- 
- 
- void exo7(){
- 	
- 	int n,fact,i;
- 	
- 	printf("\nEnter a number n : ");
- 	scanf("%d", &n);
- 	
- 	if(n==0){
- 		printf("\nThe factoriel of %d is : 1");
- 		
-	 }else{
-	 	
-	 	fact = 1;
-	 	for(i=1;i<=n;i++){
-	 		fact = fact*i;
-		 }
-		 
-		 printf("\nThe factoriel of %d is : %d",n, fact);
-		
-	 }
- 	
- }
- 
- 
- void exo8(){
- 	
- 	printf("\n\nExercice 8 : ");
- 	
- 	int S,n,i;
- 	
- 	printf("\n\n\nEnter a number n : ");
- 	scanf("%d", &n);
- 	
- 	S = 0;
- 	
- 	for(i = 0; i<=n;i++){
- 		
- 		S = S + pow(i, 3);
- 		
-	 }
-	 printf("\nThe sum is : %d", S);
- 	
- 	
- }
- 
- 
- 
+    printf("\nEntrez un entier n : ");
+    scanf("%d", &n);
+     d = n/2;
+    if(n == 1){
+        p = false;
+    }else{
+        
+        for(i = 2;i<=d;i++){
+            if(n%i == 0){
+                p = false;
+            }
 
- 
+        }
+    }
 
+    if(p == true){
+        printf("\n%d est premier", n);
+    }else{
+        printf("\n%d n'est pas premier", n);
+    }
 
+return 0;
+    
+}
 int main(){
-	
-	//exo1();
-	
-	//exo2();
-	//exo3();
-	
-	//exo4part1();
-	
-	//exo4part2();
-	
-	//exo5();
-	
-	//exo6();
-	
-	//exo7();
-	exo8();
-	
-	
-	
-	
-	return 0;
+
+   // exo1();
+   // exo2();
+  exo44();
+     
+    return 0;
+
 }
