@@ -1,4 +1,8 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+#include <time.h>
+#include <stdlib.h>
 
 int calculator(){
  printf("\nWelcome to the calculator program : ");
@@ -158,6 +162,58 @@ int sumdigits(){
 }
 
 
+int ndn(){
+
+    int n,S,i;
+
+    printf("\nVeillez entrez un entier n : ");
+    scanf("%d", &n);
+
+    S = 0;
+    for(i=1;i<=n-1;i++){
+        S = S + i;
+        
+    }
+
+    printf("\nLa somme des entier qui composent %d est : %d",n, S);
+    return 0;
+}
+
+int pr(){
+    int x,d,i;
+
+    bool p = true;
+    do{
+     printf("\nVeillez entrez un entier n : ");
+    scanf("%d", &x);
+    }while(x<0);
+  
+
+    d = x/2;
+
+
+    if(x==1){
+        p = false;
+    }else{
+        i=2;
+        while(i<=d && p == true){
+
+            if(x%i == 0){
+                p = false;
+            }
+        }
+        i++;
+    }
+
+    if(p){
+        printf("\n%d est premier", x);
+    }else{
+        printf("\n%d n'est pas premier", x);
+    }
+
+    return 0;
+}
+
 int main(){
 
     //calculator();
@@ -166,7 +222,12 @@ int main(){
     //bd();
     //inv();
 
-    sumdigits();
+    //sumdigits();
+
+    //ndn();
+    pr();
+
+
 
 
     return 0;
