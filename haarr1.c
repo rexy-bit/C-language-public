@@ -1,0 +1,270 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+
+int exo49(){
+
+    int i;
+
+    int T[10];
+
+    for(i=0;i<10;i++){
+        T[i]=0;
+    }
+
+    for(i=0;i<10;i++){
+        printf(" %d | ", T[i]);
+    }
+
+
+    return 0;
+}
+
+int exo50(){
+
+    char T[6];
+    int i;
+
+    T[0]= 'A';
+     T[1]= 'E';
+      T[2]= 'I';
+      T[3]='O';
+       T[4]='U';
+        T[5]='Y';
+
+    for(i=0;i<6;i++){
+        printf(" %c | ", T[i]);
+    }
+        return 0;
+
+}
+
+int exo51(){
+
+    int i;
+    double T[10];
+    double S,P,moy;
+
+   for(i=0;i<10;i++){
+    printf("\nEnter la valeur de la case %d : ", i+1);
+    scanf("%lf", &T[i]);
+   }
+    S = 0;
+    P = 1;
+    moy = 0;
+
+    for(i=0;i<10;i++){
+       S += T[i];
+       P *= T[i];
+    }
+
+    moy = S/10;
+
+    printf("\nLa somme des valeurs est : %.2lf", S);
+    printf("\nLe produits des valeurs est : %.2lf", P);
+    printf("\nLa moyenne des valeurs est : %.2lf", moy);
+
+    return 0;
+}
+
+int exo512(){
+
+    int i;
+
+    double max,min,moy, S;
+    double T[10];
+    i = 0;
+    printf("\nVEillez entrez la valeur de la case %d : ", i);
+    scanf("%lf", &T[0]);
+
+    S = T[0];
+    min = T[0];
+    max = T[0];
+
+
+    for(i=1;i<10;i++){
+
+        printf("\nVEillez entre zla valeur de la case %d : ", i);
+        scanf("%lf", &T[i]);
+
+        
+        
+
+        if(min > T[i]){
+            min = T[0];
+        }else if(max <T[i]){
+            max = T[i];
+        }
+
+        S = S + T[i];
+
+
+        
+}
+
+moy = S/10;
+
+    printf("\nLa moyenne est : %.2lf \nLe max est : %.2lf\nLe min est : %.2lf", moy,max, min);
+
+    return 0;
+}
+
+int exo52(){
+
+    int i;
+
+    int T1[3], T2[3];
+    int PS;
+
+    for(i=0;i<3;i++){
+        printf("\nVeillez entrez la valeur de la case %d du tableau 1 : ", i+1);
+        scanf("%d", &T1[i]);
+
+        printf("\nVeillez entrez la valeur de la case %d du tableau 2 : ", i+1);
+        scanf("%d", &T2[i]);
+
+        printf("\n-------------------------------------------------------");
+    }
+     PS = 0;
+    for(i=0;i<3;i++){
+        PS = PS + T1[i]*T2[i];
+
+    }
+
+    printf("\nLe produit scalaire des vecteur 1 et 2 est : %d", PS);
+
+    return 0;
+    
+}
+
+int minMax(){
+
+    int min,max,i,N;
+
+    do{
+        printf("\nVeillez saisir la taille du vecteur : ");
+        scanf("%d", &N);
+    }while(N<0);
+
+    int T[N];
+
+    printf("\nVeillez entrez la valeur de la case 1 : ");
+    scanf("%d", &T[0]);
+
+    min = T[0];
+    max = T[0];
+
+    for(i=1;i<N;i++){
+
+        printf("\nVeillez entrez la valeur de la case %d : ", i);
+        scanf("%d", &T[i]);
+        if(T[i]<min){
+            min = T[i];
+        }else if(T[i]>max){
+            max = T[i];
+        }
+
+    }
+    printf("\n\n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    printf("\n\nLe minimum du tableau est : %d\nLe maximum du tableau est : %d", min,max);
+
+    return 0;
+}
+
+int recherche(){
+    int i,N,val;
+
+    int T[10];
+    bool trouve = false;
+    bool p = 1;
+
+    for(i=0;i<10;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+    
+    printf("\n\n");
+    for(i=0;i<10;i++){
+        printf(" %d | ", T[i]);
+    }
+
+   while(p){
+    trouve = false;
+    printf("\n\nVeillez entrez la valeur a rechercher : ");
+    scanf("%d", &val);
+    i=0;
+    while(i<10 && trouve == false){
+
+       if(T[i]==val){
+        trouve = true;
+       }else if(T[i]!=val){
+        trouve = false;
+       }
+       
+      i++;
+    }
+    
+    if(trouve == true){
+        printf("\n%d existe dans me tableau", val);
+    }else{
+        printf("\n%d n'existe pas dans le tableau", val);
+    }
+
+    printf("\nTapez 1 pour continuer et tapez 0 pour quitter : ");
+    scanf("%d", &p);
+
+   }
+
+    return 0;
+}
+
+int oc(){
+
+    int i,N,cpt,val;
+
+    do{
+        printf("\nEntrez le nombre de cases : ");
+        scanf("%d", &N);
+
+    }while(N<0);
+    
+    int T[N];
+    for(i=0;i<N;i++){
+        printf("\nVeillez saisir la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\n\n");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    printf("\nVeillez entrez la valeur a rechercher : ");
+    scanf("%d", &val);
+
+    cpt =0;
+
+    for(i=0;i<N;i++){
+
+        if(T[i]==val){
+            cpt++;
+        }
+    }
+
+    printf("\n%d se repete %d fois", val, cpt);
+
+    return 0;
+}
+int main(){
+   oc();
+
+ return 0;
+}
