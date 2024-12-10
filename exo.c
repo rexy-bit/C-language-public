@@ -229,9 +229,50 @@ int exo5gpt(){
 
     return 0;
 }
+
+int inve(){
+
+    int i,N,j;
+
+    do{
+        printf("\nVeillez entrez la taille du vecteur : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+         printf("\nVeillez entrez la valeu de la case %d : ", i);
+         scanf("%d", &T[i]);
+    }
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+    
+
+
+    for(i=0;i<N;i++){
+        if(T[i]==0){
+            for(j=i;j<N;j++){
+                T[j]=T[j+1];
+            }
+            N = N-1;
+        }
+    }
+
+    printf("\nLe tableau apres avoir inverser ses valeurs est : ");
+    printf("\n");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
 int main(){
 
-    exo5gpt();
+    inve();
 
     return 0;
 }
