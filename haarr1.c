@@ -179,7 +179,7 @@ int minMax(){
 }
 
 int recherche(){
-    int i,N,val;
+    int i,val;
 
     int T[10];
     bool trouve = false;
@@ -263,8 +263,175 @@ int oc(){
 
     return 0;
 }
+
+
+int exo57(){
+
+    int i;
+    float moy,S;
+    float T[10];
+  
+  S = 0;
+  moy = 0;
+    
+    for(i=0;i<10;i++){
+        printf("\nVeillez entrez la note de l'eleve %d : ", i+1);
+        scanf("%f", &T[i]);
+        S = S + T[i];
+    }
+        moy = S/10;
+
+    printf("\nVoici les notes : ");
+    printf("\n");
+    for(i=0;i<10;i++){
+        printf(" %.2f | ", T[i]);
+    }
+
+
+
+
+    printf("\nLa moyenne des notes des eleves est : %.2f", moy);
+
+    printf("\nLes notes superieurs a la moyenne sont : ");
+    for(i=0;i<10;i++){
+      if(T[i]>moy){
+        printf(" %.3f | ",T[i]);
+      }
+    }
+
+    return 0;
+}
+
+int exo58(){
+
+    int i;
+    double T[20];
+
+    T[0] = 1000;
+
+    for(i=1;i<20;i++){
+        T[i]=T[i-1] + (T[i-1]*2)/100;
+    }
+
+    for(i=0;i<20;i++){
+        printf("\nLe comte bancaire a %d ans contient %.2f dh", i+1, T[i]);
+    }
+
+    return 0;
+}
+
+int exo59(){
+
+    int i;
+
+    int TE[10];
+
+    int TS[10];
+    
+
+    for(i=0;i<10;i++){
+        printf("\nEntrez la valeur de la case %d : ", i+1);
+        scanf("%d", &TE[i]);
+    }
+
+    printf("\nLe tableau est : ");
+    printf("\n");
+
+    for(i=0;i<10;i++){
+        printf(" %d | ", TE[i]);
+    }
+
+    printf("\n\n");
+
+    printf("\nLe tableau inverser est : ");
+    printf("\n");
+
+    for(i=9;i>=0;i--){
+        TS[9-i]=TE[i];
+    }
+
+    for(i=0;i<10;i++){
+        printf("%d | ", TS[i]);
+    }
+
+    return 0;
+}
+
+int exoinv(){
+
+    int i,j,temp,N;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\n\n");
+    printf("\nLe tableau est : ");
+    printf("\n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    j=N-1;
+    i=0;
+
+    while(i<j){
+      temp =  T[i];
+      T[i]= T[j];
+      T[j]=temp;
+
+      i=i+1;
+      j--;
+    }
+
+    printf("\n");
+    printf("\nLe tableau inverser est : ");
+    printf("\n");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+
+
+}
+
+int exo60(){
+
+    int i,N;
+
+   do{
+      printf("\nVeillez entrez l ataille du tableau : ");
+      scanf("%d", &N);
+   }while(N<=0);
+
+   int T[N];
+
+   T[0]=2;
+   i = 0;
+   while(i<N && i != T[i]){
+           if(T[i]%i!=0){
+        printf(" %d | ", T[i]);
+     }
+     T[i]=T[i]+1;
+     i++;
+   }
+
+   return 0;
+
+}
+
 int main(){
-   oc();
+   exo60();
 
  return 0;
 }
