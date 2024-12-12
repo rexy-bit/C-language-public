@@ -418,20 +418,108 @@ int exo60(){
 
    T[0]=2;
    i = 0;
-   while(i<N && i != T[i]){
-           if(T[i]%i!=0){
-        printf(" %d | ", T[i]);
-     }
-     T[i]=T[i]+1;
-     i++;
+
+   for(i=0;i<N;i++){
+    // for(j=0;i<)
    }
 
    return 0;
 
+
+
 }
 
+int exo63(){
+
+    int i,N,j;
+    int val, temp;
+
+    do{
+        printf("\nveillez entrez la taille du tableau : ");
+        scanf("%d", &N);
+
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nveillez entrez la valeur de la case %d : ", i);
+        scanf("%d", &T[i]);
+    }
+
+    for(i=0;i<N;i++){
+        printf(" [ %d ] ", T[i]);
+    }
+
+    printf("\nVeillez entrez la valeur d=que vous voulez supprimer : ");
+    scanf("%d", &val);
+
+    for(i=0;i<N;i++){
+        if(T[i]==val){
+            for(j=i;j<N-1;j++){
+               T[j]=T[j+1];
+            }
+            N--;
+            i--;
+        }
+
+    }
+    printf("\nLe tableau apres avoir supprimer %d est : ", val);
+    for(i=0;i<N;i++){
+        printf(" [ %d ] ", T[i]);
+    }
+
+    return 0;
+    
+}
+
+    int sup0(){
+
+        int i,N,j,temp;
+
+        do{
+            printf("\nVeillez entrez la taille du tableau : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        int  T[N];
+
+        for(i=0;i<N;i++){
+            printf("\nVeillez entrez la valeur de la case %d : ");
+            scanf("%d", &T[i]);
+        }
+
+        printf("\nVotre tableau : ");
+        printf("\n");
+
+        for(i=0;i<N;i++){
+            printf(" [ %d ] ", T[i]);
+        }
+
+        for(i=0;i<N;i++){
+           if(T[i]==0){
+             for(j=i;j<N;j++){
+            temp=T[i];
+            T[i]=T[j];
+            T[j]=temp;
+             }
+             N--;
+             i--;
+           }
+        }
+
+        printf("\nLe tableau apres la suppression des zeros est : ");
+
+        for(i=0;i<N;i++){
+
+            printf(" [ %d ] ", T[i]);
+        }
+
+        return 0;
+    }
+
 int main(){
-   exo60();
+   sup0();
 
  return 0;
 }
