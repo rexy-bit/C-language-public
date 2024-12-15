@@ -214,18 +214,336 @@ int pr(){
     return 0;
 }
 
+
+int exop(){
+
+    int i,A,d;
+    bool p = false;
+
+    printf("\nVeillez entrez un entier : ");
+    scanf("%d", &A);
+
+    i = 2;
+    d = A/2;
+
+    while(i<=d && p==false){
+        if(A%i==0){
+            p = true;
+        }
+        i++;
+    
+    }
+
+    if(p==true){
+        printf("\n%d n'est premier", A);
+    }else{
+        printf("\n%d est premier", A);
+    }
+
+    return 0;
+}
+
+int decimale(){
+
+    int d,vb,b,p;
+    int val;
+
+    do{
+        printf("\nVeillez entrez un nombre binaire : ");
+        scanf("%d", &b);
+    }while(b<0);
+
+    vb=b;
+    p=1;
+    d=0;
+  
+
+    while(b!=0){
+        d = d + (b%10)*p;
+        p*=2;
+        b = b/10;
+    }
+
+    printf("\n%d en decimale est %d", vb,d);
+
+    return 0;
+
+}
+
+int prs(){
+
+    int i,N,ps;
+
+  do{
+    printf("\nVeillez saisir la taille du tableau : ");
+    scanf("%d", &N);
+  }while(N<=0);
+ ps = 0;
+
+  int T1[N], T2[N], T3[N];
+
+  for(i=0;i<N;i++){
+    
+    printf("\nVeillez entrez la valeur de la case : %d du tableau 1 : ", i);
+    scanf("%d", &T1[i]);
+
+    printf("\n");
+    printf("\nVeillez entrez la valeur de la case : %d du tableau numero 2 : ", i);
+    scanf("%d", &T2[i]);
+
+    T3[i]=T1[i]+T2[i];
+    ps = ps + T1[i]*T2[i];
+
+  }
+
+  printf("\nLe produit scalaire est : %d", ps);
+
+  printf("\nLa somme est : ");
+  for(i=0;i<N;i++){
+    printf(" %d | ",T3[i] );
+  }
+  
+    return 0;
+}
+
+int drac(){
+
+    int i,N,j,val;
+
+    do{
+        printf("\nVeillez saisir la taille du tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N],pos[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\n");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+    printf("\n");
+    printf("\nVeillez saisir la valeur a rechercher : ");
+    scanf("%d", &val);
+    j=0;
+
+    for(i=0;i<N;i++){
+       if(T[i]==val){
+          pos[j]=i;
+          j++;
+       }
+    }
+
+    if(j==0){
+        printf("\n %d n'existe meme pas dans le tableau", val);
+    }else{
+        printf("\nLes indices ou val existe dans le tableau : ");
+            for(i=0;i<j;i++){
+           printf(" %d | ", pos[i]);
+    }
+    }
+
+
+    return 0;
+
+
+
+    
+}
+
+int pgcd(){
+    int a,b;
+
+     printf("\nEntrez les valeurs de a et b : ");
+     scanf("%d%d", &a, &b);
+
+     if(a == 0){
+        printf("PGCD = %d", b);
+     }else if(b==0){
+        printf("PGCD = %d", a);
+     }else{
+        while(a!=b){
+            if(a<b){
+               b = b -a;
+            }else if(a>b){
+                a = a - b;
+            }
+        }
+
+        printf("\nPGCD = %d ", a);
+
+
+     }
+   return 0;
+}
+
+int test(){
+
+    int i,j,result;
+
+    for(i=1;i<=4;i++){
+         j = 3;
+         
+         while(j){
+            result = i*j;
+            printf("\ni = %d, j = %d, result = %d", i,j,result);
+            i++;
+            j--;
+         }
+    }
+
+    return 0;
+}
+
+
+int inv2(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+  int T[N];
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ",i+1);
+        scanf("%d", &T[i]);
+    }
+
+
+   printf("\nVotre tavleau est : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    j = N-1;
+    i=0;
+      int temp;
+    while(i<=j){
+     temp=T[i];
+     T[i]=T[j];
+     T[j]=temp;
+     i++;
+     j--;
+    }
+
+    printf("\n\nLe tableau inverser est : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
+
+
+int paires(){
+
+    int i,j,N,k;
+
+    int T[100];
+    int A[100];
+    int B[100];
+
+
+    do{
+        printf("\nVeillez entrez l ataille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    for(i=0;i<N;i++){
+        printf("\nVeuillez entre la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+    k = 0;
+    j=0;
+    for(i=0;i<N;i++){
+        if(T[i]%2==0){
+             
+             A[j]=T[i];
+             j = j+1;
+        }else{
+            
+            B[k]=T[i];
+            k=k+1;
+        }
+    }
+
+    printf("\n\nVoici le tableau des paires : ");
+    for(i=0;i<j;i++){
+       printf(" %d | ", A[i]);
+    }
+
+    printf("\n\nLe tableau des impaires est : ");
+    for(i=0;i<k;i++){
+        printf(" %d | ", B[i]);
+    }
+
+    return 0;
+    
+}
+
+int crois(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau : ");
+        scanf("%d", &N);
+       
+    } while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+    printf("\nVoici votre tableau apres le tri : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    i=0;
+    j=1;
+    int temp;
+    
+    for(i=0;i<N;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]>T[j]){
+                temp = T[i];
+                T[i]=T[j];
+                T[j]=temp;
+            }
+        }
+    }
+
+    printf("\n\nLe tableau apres l'ordre est : ");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+    
+}
 int main(){
 
     //calculator();
-
+    
     //db();
     //bd();
     //inv();
 
     //sumdigits();
-
+     crois();
     //ndn();
-    pr();
+     //pgcd();
+    //exop();
 
 
 
