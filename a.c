@@ -246,7 +246,7 @@ int exop(){
 int decimale(){
 
     int d,vb,b,p;
-    int val;
+    
 
     do{
         printf("\nVeillez entrez un nombre binaire : ");
@@ -531,6 +531,159 @@ int crois(){
     return 0;
     
 }
+//Je suis 
+int exo6hamham(){
+
+    int i,j,N,M,K;
+
+    do{
+        printf("\nVeillez entrez la taille du vecteur 1 : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int V1[N];
+    
+    for(i=0;i<N;i++){
+       printf("\nVeillez entrez la valeur de l acase %d du vecteur 1 : ",i+1);
+       scanf("%d", &V1[i]);
+    }
+
+   printf("\n");
+    do{
+        printf("nVeillez entrez la taille du vecteur 2 : ");
+        scanf("%d", &M);
+    }while(M<=0);
+
+    int V2[M];
+
+    printf("\n");
+
+    for(i=0;i<M;i++){
+      printf("\nVeillez entrez la valeur de la case %d du vecteur 2 : ", i+1);
+      scanf("%d", &V2[i]);
+    }
+
+    printf("\nVoici votre premier vecteur : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", V1[i]);
+    }
+
+    printf("\n\nVoici votre deuxieme vecteur : ");
+    for(i=0;i<M;i++){
+        printf(" %d | ", V2[i]);
+    }
+
+    int V3[200];
+
+    K = 0;
+    for(i=0;i<N;i++){
+      
+      V3[K]=V1[i];
+      K++;
+    }
+
+    for(i=0;i<M;i++){
+        V3[K]=V2[i];
+        K++;
+    }
+
+    printf("\nVoici votre troisieme vecteur : ");
+    for(i=0;i<K;i++){
+        printf(" %d | ", V3[i]);
+    }
+
+
+     int l;
+
+    for(i=0;i<K;i++){
+        for(j=i+1;j<K;j++){
+            if(V3[i]==V3[j]){
+                for(l=j;l<K-1;l++){
+                    V3[l]=V3[l+1];
+                }
+                K--;
+                j--;
+
+              }
+        }
+    }
+
+    printf("\nVotre tableau apres avoir supprimer les valeurs identiques est : ");
+    printf("\n");
+
+    for(i=0;i<K;i++){
+        printf(" %d | ", V3[i]);
+    }
+   
+   int temp;
+
+    for(i=0;i<K;i++){
+        for(j=i+1;j<K;j++){
+        if(V3[j]<V3[i]){
+           temp=V3[i];
+           V3[i]=V3[j];
+           V3[j]=temp;
+        }
+        }
+    }
+
+    printf("\nLe tableau 3 apres avoir trier tous les element par ordre croissant est : ");
+    for(i=0;i<K;i++){
+        printf(" %d ",V3[i]);
+
+    }
+
+    
+
+   return 0;
+}
+
+int negpos(){
+
+    int i,j,N,temp;
+
+    do{
+        printf("\nVeilllez entrez l ataille du tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case  %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVotre nouveau tableau est : \n\n");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+    
+
+    for(i=0;i<N;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]>=0 && T[j]<0){
+              temp = T[i];
+              T[i]=T[j];
+              T[j]=temp;
+            }
+        }
+    }
+
+    printf("\n\nVotre nouveau tableau est : \n\n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
 int main(){
 
     //calculator();
@@ -540,7 +693,7 @@ int main(){
     //inv();
 
     //sumdigits();
-     crois();
+     negpos();
     //ndn();
      //pgcd();
     //exop();
