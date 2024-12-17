@@ -518,8 +518,68 @@ int exo63(){
         return 0;
     }
 
+  int add(){
+
+    int N,i,j;
+    int val;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+               printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+
+    printf("\n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+   int ind;
+
+    printf("\nVeillez entrez la variable que vous voulez rajouer a votre tableau : ");
+    scanf("%d", &val);
+
+    printf("\nDonnez l'indice de la case ou vous voulez l'inserer : ");
+    scanf("%d", &ind);
+
+
+    if(ind<0 && ind >N-1){
+        printf("\nL'indice n'existe pas dans le tableau");
+    }else{
+        for(i=N+1;i>=ind;i--){
+            T[i]=T[i-1];
+        }
+        T[ind-1]=val;
+        N = N +1;
+    }
+
+    printf("\nLe nouveau tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+
+
+    
+
+
+   
+    
+
+
+
+  }
+
 int main(){
-   sup0();
+   add();
 
  return 0;
 }
