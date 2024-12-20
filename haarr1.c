@@ -568,18 +568,151 @@ int exo63(){
     return 0;
 
 
-    
-
-
-   
-    
-
-
-
   }
 
+int vecteur(){
+
+    int i,j,N,K;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int T1[N];
+    int T2[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case  %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVoici votre tableau : ");
+
+    printf("\n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    j=0;
+    K=0;
+    for(i=0;i<N;i++){
+        if(T[i]%2==0){
+            T1[j]=T[i];
+            j++;
+        }else{
+            T2[K]=T[i];
+            K++;
+        }
+    }
+
+
+    printf("\n\nLe tabmleau des paires est : \n");
+    for(i=0;i<j;i++){
+        printf(" %d | ", T1[i]);
+    }
+
+    printf("\nLe tableau des impaires est : \n");
+    for(i=0;i<K;i++){
+        printf(" %d | ", T2[i]);
+    }
+
+
+    return 0;
+}
+
+int trii(){
+    int i,j,N,M;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau 1 : \n");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T1[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la taille de la case %d : ", i+1);
+        scanf("%d", &T1[i]);
+    }
+
+
+
+    do{
+        printf("\n\nveillez entrez la taille du tableau : \n");
+        scanf("%d", &M);
+    }while(M<=0);
+    
+    int T2[M];
+
+    for(i=0;i<M;i++){
+        printf("\n\nVeillez entrez la valeur de la case : \n", i+1);
+        scanf("%d", &T2[i]);
+    }
+
+        printf("\nVoici votre premier tableau : \n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T1[i]);
+    }
+
+    printf("\nVoici votre deuxieme tableau : \n");
+    for(i=0;i<M;i++){
+        printf(" %d | ", T2[i]);
+    }
+    
+    //remplissage du vecteur 3 : 
+
+    int T3[N+M];
+    int K = 0;
+    for(i=0;i<N;i++){
+        T3[K]=T1[i];
+        K++;
+    }
+    
+    for(i=0;i<M;i++){
+        T3[K]=T2[i];
+        K++;
+    }
+ printf("\nVoici votre troisieme tableau ava,t le tri : \n");
+    for(i=0;i<K;i++){
+        printf(" %d | ", T3[i]);
+    }
+  int l;
+    for(i=0;i<K-1;i++){
+       for(j=i+1;j<K;j++){
+        if(T3[j]==T3[i]){
+           for(l=j;l<K-1;l++){
+             T3[l]=T3[l+1];
+           }
+           K--;
+           j--;
+        }
+       }
+    }
+
+  int temp;
+    for(i=0;i<K-1;i++){
+        for(j=i+1;j<K;j++){
+            if(T3[i]>T3[j]){
+                temp=T3[i];
+                T3[i]=T3[j];
+                T3[j]=temp;
+            }
+        }
+    }
+
+    printf("\n\nVoici votre tableau apres toutes les modifications : \n");
+    for(i=0;i<K;i++){
+        printf(" %d | ", T3[i]);
+    }
+
+   return 0;
+    
+}
+
 int main(){
-   add();
+   trii();
 
  return 0;
 }
