@@ -660,7 +660,7 @@ int negpos(){
     }
     
 
-    for(i=0;i<N;i++){
+    for(i=0;i<N-1;i++){
         for(j=i+1;j<N;j++){
             if(T[i]>=0 && T[j]<0){
               temp = T[i];
