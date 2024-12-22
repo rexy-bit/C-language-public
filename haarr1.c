@@ -647,8 +647,8 @@ int trii(){
     int T2[M];
 
     for(i=0;i<M;i++){
-        printf("\n\nVeillez entrez la valeur de la case : \n", i+1);
-        scanf("%d", &T2[i]);
+        //printf("\n\nVeillez entrez la valeur de la case : \n", i+1);
+       // scanf("%d", &T2[i]);
     }
 
         printf("\nVoici votre premier tableau : \n");
@@ -711,8 +711,154 @@ int trii(){
     
 }
 
+
+
+int paires(){
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau : \n");
+        scanf("%d", &N);
+    }while(N<=0);
+
+
+    int T[N];
+
+   for(i=0;i<N;i++){
+
+    printf("\nVeillez entrez la valuer de la case %d : \n", i+1);
+    scanf("%d", &T[i]);
+   }
+    
+    int Temp;
+   for(i=0;i<N;i++){
+      for(j=i+1;j<N;j++){
+        if((T[i]%2!=0)&&(T[j]%2==0)){
+           Temp = T[i];
+           T[i] = T[j];
+           T[j] = Temp;
+        }
+      }
+   }
+
+   printf("\n\nVoici votre tableau : \n");
+   for(i=0;i<N;i++){
+      printf(" %d | ", T[i]);
+   }
+
+   return 0;
+}
+
+int algoinser(){
+
+    int i,j,N;
+
+
+do{
+    printf("\nVeillez entrez la taille de votre tableau : ");
+    scanf("%d", &N);
+}while(N<=0);
+
+  int T[N];
+for(i=0;i<N;i++){
+    printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+    scanf("%d", &T[i]);
+}
+
+for(i=0;i<N;i++){
+    printf(" %d | ", T[i]);
+}
+   
+   int val;
+   int ind;
+
+   printf("\n\nVeillez entrez la valeur que vous voulez inserer dans le tableau : ");
+   scanf("%d", &val);
+
+   printf("\nVeillez entrez le numero de la case : ");
+   scanf("%d", &ind);
+
+   if(ind>=0 && ind <N){
+      for(i=N+1;i>=ind;i--){
+         T[i]=T[i-1];
+      }
+      T[ind-1]=val;
+      N++;
+      
+
+   }else{
+      printf("\nL'indice n'existe pas dans le tableau");
+   }
+
+
+   printf("\nLe nouveu tableau apres avoir inserer %d dans la case %d est : ", val,ind);
+
+   for(i=0;i<N;i++){
+    printf(" %d | ", T[i]);
+   }
+
+   return 0;
+
+
+}
+
+int supp(){
+
+    int i,N,j;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\n\nVoici votre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+ 
+    int val;
+    int Temp;
+    bool p = 0;
+
+    printf("\nVeillez entrez la valeur que vous voulez supprimer : ");
+    scanf("%d", &val);
+    for(i=0;i<N;i++){
+        if(T[i]==val){
+            p=1;
+
+            for(j=i;j<N-1;j++){
+              T[j]=T[j+1];
+            }
+            N--;
+            i--;
+        }
+    }
+
+    if(p==1){
+        printf("\nVotre nouveau tableau est : ");
+        for(i=0;i<N;i++){
+            printf(" %d | ", T[i]);
+        }
+        printf("\n%d a etait suprimmer", val);
+    }else{
+        printf("\n\n%d n'exsite meme pas dans le tableau : ");
+    }
+
+    return 0;
+
+    
+
+}
+
 int main(){
-   trii();
+   supp();
 
  return 0;
 }
