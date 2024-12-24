@@ -857,8 +857,200 @@ int supp(){
 
 }
 
+int ocpos(){
+
+    int i,j,N;
+
+   do{
+
+     
+    printf("\nVeillez entrez le nombre de lignes : ");
+    scanf("%d", &N);
+   }while(N<=0);
+
+   int T[N];
+
+   for(i=0;i<N;i++){
+    printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+    scanf("%d",&T[i]);
+   }
+
+   for(i=0;i<N;i++){
+    printf(" %d | ", T[i]);
+   }
+
+   int val;
+   printf("\nVeillez entrez un nombre a rechercher : ");
+   scanf("%d", &val);
+
+   int pos[N];
+   int K = 0;
+ 
+
+   for(i=0;i<N;i++){
+      if(T[i]==val){
+         pos[K]=i+1;
+         K++;
+        
+      }
+   }
+
+   if(K==0){
+    printf("\n%d n'existe pas dans le tabelau : ", val);
+   }else{
+     printf("\n%d se repete %d fois dans le tabelau : ", val, K);
+     printf("\n\nLes positions d'apparitions de %d sont : ", val);
+
+     for(i=0;i<K;i++){
+        printf(" %d | ", pos[i]);
+     }
+
+   }
+
+   return 0;
+}
+
+int paireimpaires(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau: ");
+        scanf("%d", &N);
+    }while(N<=0);
+     
+     int T[N];
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVoici votre magnifique tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    int T1[N];
+    int T2[N];
+    int k=0;
+    j=0;
+
+    for(i=0;i<N;i++){
+        if(T[i]%2==0){
+            T1[j]=T[i];
+            j++;
+        }else{
+            T2[k]=T[i];
+            k++;
+        }
+    }
+
+    printf("\nVoici le tableau des paires : ");
+    for(i=0;i<j;i++){
+        printf(" %d | ", T1[i]);
+    }
+    
+
+    printf("\nVoici le tableau des impaires : ");
+    for(i=0;i<k;i++){
+        printf(" %d | ", T2[i]);
+    }
+   
+   return 0;
+
+}
+
+int max1max2(){
+
+    int i,N,max1,max2;
+
+    do{
+        printf("\nVeillez netrez l ataille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVotre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    max1 = T[0];
+    for(i=1;i<N;i++){
+        if(T[i]>max1){
+            max1 = T[i];
+        }
+    }
+
+    max2 = T[0];
+    i=1;
+    while(i<N){
+        if(T[i]>max2 && T[i]!=max1){
+            max2 = T[i];
+        }
+        i++;
+    }
+
+    printf("\nLe 1er plus grand element du tableau est : %d", max1);
+    printf("\nLe 2eme plus grand element du tableau est : %d", max2);
+    
+    return 0;
+}
+
+int unique(){
+    int i,j,N;
+
+    do{
+        printf("\nVeillez netrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entre la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    bool p;
+
+    printf("\nVoici votre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    printf("\n\nLes element uniques du tableau sont : ");
+    for(i=0;i<N;i++){
+        p = true;
+        j=i+1;
+        while(j<N && p==true){
+            if(T[i]==T[j]){
+                p =false;
+            }else{
+                j++;
+            }
+            
+        }
+
+        if(p==true){
+            printf(" %d | ", T[i]);
+        }
+
+    }
+    return 0;
+
+}
+
+
+
 int main(){
-   supp();
+   unique();
 
  return 0;
 }
