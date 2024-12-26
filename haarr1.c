@@ -1027,11 +1027,12 @@ int unique(){
 
     printf("\n\nLes element uniques du tableau sont : ");
     for(i=0;i<N;i++){
+        
         p = true;
         j=i+1;
         while(j<N && p==true){
             if(T[i]==T[j]){
-                p =false;
+                p = false;
             }else{
                 j++;
             }
@@ -1047,10 +1048,178 @@ int unique(){
 
 }
 
+int decr(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    int Pmin,Pmax,min,max;
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ",i+1);
+        scanf("%d", &T[i]);
+    }
+     printf("\nVoici votre tableau : "); 
+    for(i=0;i<N;i++){
+          printf(" %d | ", T[i]);
+    }
+
+    min = T[0];
+    max = T[0];
+    Pmin = 0;
+    Pmax = 0;
+
+
+    for(i=0;i<N;i++){
+        if(T[i]<min){
+            min = T[i];
+            Pmin = i;
+        }else if(max<T[i]){
+            max = T[i];
+            Pmax = i;
+        }
+    }
+
+    printf("\nLe minimum est : %d Et le maximum est : %d", min,max);
+    printf("\nLa position du min est : %d la position du max est : %d", Pmin , Pmax);
+
+    if(Pmin <Pmax){
+        for(i=Pmin+1;i<Pmax;i++){
+          for(j=i;j<N-1;j++){
+                    T[j]=T[j+1];
+          }
+          
+            N--;
+            Pmax--;
+            i--;
+        }
+    }else if(Pmax<Pmin){
+        for(i=Pmax +1;i<Pmin;i++){
+            for(j=i;j<N-1;j++){
+                     T[j]=T[j+1];
+            }
+            
+            N--;
+            Pmin--;
+            i--;
+        }
+    }
+
+    printf("\nVotre nouveau tableau est : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
+
+int premier100(){
+   int i,N;
+   bool p = true;
+
+   printf("\nLes nombre premier inferieurs a 100 sont : ");
+
+   for(N=1;N<=100;N++){
+      i=2;
+      p=true;
+      while(i<=N/2 && p == true){
+        if(N%i==0){
+            p = false;
+        }
+        i++;
+      }
+
+      if(p==true){
+        printf("%d", N);
+        printf("\n");
+      }
+
+   }
+
+
+   return 0;
+}
+
+
+int minpos(){
+
+    int i,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de l a case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVoivi votre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+
+    int min = T[0];
+    int max = T[0];
+
+    int Pmin = 0;
+    int Pmax = 0;
+
+    for(i=1;i<N;i++){
+        if(T[i]<min){
+            min = T[i];
+            Pmin = i;
+        }else if(T[i]>max){
+            max = T[i];
+            Pmax=i;
+        }
+
+    }
+
+    printf("Max = %d, Min = %d", max, min);
+    printf("\nLa position du maximum est : %d, La position du minimum est : %d", Pmax, Pmin);
+    int j;
+    if(Pmin<Pmax){
+        for(i=Pmin+1;i<Pmax;i++){
+            for(j=i;j<N;j++){
+                T[j]=T[j+1];
+               
+            }
+            Pmax--;
+            N--;
+            i--;
+        }
+    }else if(Pmax<Pmin){
+        for(i=Pmax+1;i<Pmin;i++){
+            for(j=i;j<N;j++){
+                T[j]=T[j+1];
+            }
+            Pmin--;
+            N--;
+            i--;
+        }
+    }
+
+    printf("\nVotre nouveau tableau est : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
 
 
 int main(){
-   unique();
-
+    
+    minpos();
  return 0;
 }
