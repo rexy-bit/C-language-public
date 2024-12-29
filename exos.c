@@ -84,7 +84,116 @@ int ch(int x){
     return nbr;
 }
 
+int test(int i){
+
+    int j;
+    i++;
+    j = i+3;
+
+
+    return j;
+    return i;
+}
+
+bool premier2(int x){
+     bool p;
+
+     int i;
+
+     if(x == 1){
+        p = false;
+     }else{
+        p = true;
+        i = 2;
+        while(i<=x/2 && p==true){
+            if(x%i==0){
+                p = false;
+            }
+            i++;
+        }
+
+     }  
+
+     return p; 
+}
+
+int nbr(int x){
+
+    int n;
+    n = 0;
+
+    while(x>0){
+        x=x/10;
+        n++;
+    }
+    return n;
+}
+
+
+int diametre(int x){
+
+    int d;
+    d = 2*x;
+
+    return d;
+}
+
+float surface(int x){
+
+    float s;
+    s = 3.14*pow(x, 2);
+
+    return s;
+}
+
+float per(int x){
+
+    float p;
+    p = 2*3.14*x;
+
+    return p;
+}
+ float a,b,c;
+float delta(){
+    int d;
+    d = pow(b, 2) - 4*a*c;
+
+    return d;
+}
+
+void sol(int a, int b, int c){
+    float x1, x2, x0;
+
+    if(delta()>0){
+        x1 = (-b + sqrt(delta()))/(2*a);
+        x2 = (-b - sqrt(delta()))/(2*a);
+
+        printf("\nL'equation possede deux solutions sur R : %.2f, %.2f", x1, x2);
+    }else if(sqrt(delta())==0){
+        x0 = -b/(2*a);
+
+        printf("\nL'equation possede une seul solution dans R : %.2f", x0);
+        
+    }else{
+        printf("\nPas de solutions dans R : ");
+    }
+}
+
+
 int main(){
 
-printf("\nYou are beautiful");
+   
+
+    printf("\nVeillez entrez la valeur de a : ");
+    scanf("%f", &a);
+
+    printf("\nVeillez entrez la valeur de b : ");
+    scanf("%f", &b);
+
+    printf("\nVeillez entrez l avleur de c : ");
+    scanf("%f", &c);
+
+    sol(a,b,c);
+
+     return 0;
 }
