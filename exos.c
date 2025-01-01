@@ -179,21 +179,116 @@ void sol(int a, int b, int c){
     }
 }
 
+float a,b,c;
+
+int del(){
+
+    float d;
+    d = pow(b, 2) - 4*a*c;
+
+    return d;
+
+}
+
+float somme(float T[], int N){
+
+    int i;
+    float S;
+    S=0;
+
+    for(i=0;i<N;i++){
+     S = S + T[i];
+    }
+
+    return S;
+}
+
+float produit (float T[], int N){
+
+    int i;
+    float p = T[1];
+
+    for(i=1;i<N;i++){
+        p =p*T[i];
+    }
+
+    return p;
+}
+
+
+float moyenne (float T[], int N){
+
+    float moy = somme(T,N)/N;
+
+    return moy;
+}
+
+void negposi(float T[],int N){
+     int i;
+     
+     printf("\nVoici les nombres positifss : ");
+     for(i=0;i<N;i++){
+        if(T[i]>0){
+            printf(" %f | ", T[i]);
+        }
+     }
+
+     printf("\nVoici les nombrzes negatifs : ");
+
+     for(i=0;i<N;i++){
+       if(T[i]<0){
+        printf(" %f | ", T[i]);
+       }
+     }
+
+  }
+void solu(){
+
+    float X1,X2;
+    float X0;
+
+    if(delta()>0){
+        printf("\nL'equation possede deux solutions sur l'ensemble R : ");
+        X1 =(-b + sqrt(delta()))/2*a;
+        X2 = (-b + sqrt(delta()))/2*a;
+
+        printf("\nLes solutions X1 = %.2f, X2 = %.2f", X1, X2);
+
+    }else if(delta()==0){
+        printf("\nL'equation possede une solution unique sur R qui est : ");
+        X0 = -b/(2*a);
+        printf("\nLa solution de l'equation est : %.2f", X0);
+    }else{
+        printf("\nL'quation ne possede de solution sur R ");
+    }
+}
+
 
 int main(){
 
    
+    int i,N;
 
-    printf("\nVeillez entrez la valeur de a : ");
-    scanf("%f", &a);
+    do{
+        printf("\nVeillez entrez l ataille de vpotre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
 
-    printf("\nVeillez entrez la valeur de b : ");
-    scanf("%f", &b);
+    float V[N];
 
-    printf("\nVeillez entrez l avleur de c : ");
-    scanf("%f", &c);
+    for(i=0;i<N;i++){
+        printf("\nVeillez netrez la valeur de la case %d : ", i+1);
+        scanf("%f", &V[i]);
+    }
 
-    sol(a,b,c);
+    printf("\nVoici votre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %f | ", V[i]);
+    }
 
+    printf("\nLa somme de votre tableau est : %.2f", somme(V, N));
+    printf("\nLe produit de votre tableau est : %.2f", produit(V, N));
+    printf("\nLa moyenne de votre tableau est : %.2f", moyenne(V,N));
+    negposi(V,N);
      return 0;
 }
