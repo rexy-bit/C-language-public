@@ -1218,8 +1218,187 @@ int minpos(){
 }
 
 
+int exoexam(){
+
+    int  i,j,N;
+    bool p;
+ 
+    do{
+        printf("\nVeillez entrez le nombre de lignes : ");
+        scanf("%d", &N);
+    }while(N<=0);
+    int T[N];
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVoici votre vecteur : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    for(i=0;i<N;i++){
+        
+        j = 0;
+        while(j<N){
+            if(T[j]==T[i] && i!=j){
+                T[j]=0;
+            }
+            j++;
+        }
+    }
+
+    printf("\nVotre vectuer apres modification : ");
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+
+    return 0;
+}
+
+
+  
+int calc(){
+
+    double num1,num2,result;
+    char op;
+    int p;
+
+  printf("\nBienvenu au programme calculatrice : ");
+
+   do{
+
+       printf("\nVeillez entrez votre operateur : ");
+       scanf(" %c", &op);
+
+       printf("\nVeillez entrez votre prmeier numero : ");
+       scanf("%lf", &num1);
+
+       printf("\nVeillez entrez votre deuxieme numero : ");
+       scanf("%lf", &num2);
+
+       switch(op){
+
+        case '+':
+           result = num1 + num2;
+           break;
+
+        case '-':
+           result = num1 - num2;
+           break;
+
+        case '*':
+           result = num1 * num2;
+           break;
+
+        case '/':
+            if(num2 != 0){
+                result = num1 / num2;
+            }else{
+                printf("\nMaths error division par zero impossible");
+
+            }
+            break;
+
+       }
+
+       printf("\nThe result is : %.2lf", result);
+
+       do{
+        printf("\nVoulez vous continuer ? tapez '1' pour un oui ou '0' pour un non : ");
+       scanf("%d", &p);
+       }while(p!=0 && p!=1);
+   }while(p == 1);
+
+   return 0;
+}
+
+int decroissant(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+
+    }while(N<=0);
+
+    int T[N];
+    int temp;
+
+    for(i=0;i<N;i++){
+        printf("\nVeillez netrez la valeur de la  case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nVoici votre tavleau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    for(i=0;i<N;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]<=T[j]){
+                temp = T[i];
+                T[i]=T[j];
+                T[j]=temp;
+            }
+        }
+    }
+
+    printf("\nVotre tableau apres le tri par ordre croissant est : ");
+    for(i=0;i<N;i++){
+       printf(" %d | ", T[i]);
+    }
+
+    return 0;
+
+}
+
+int zerofin(){
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+
+    }while(N<=0);
+
+    int T[N];
+
+    int temp;
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    printf("\nVoici votre tableau apres modification : ");
+
+    for(i=0;i<N-1;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]==0 && T[j]!=0){
+                temp = T[i];
+                T[i]=T[j];
+                T[j]=temp;
+            }
+        }
+    }
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+
+    return 0;
+}
 int main(){
     
-    minpos();
+   zerofin();
  return 0;
 }
