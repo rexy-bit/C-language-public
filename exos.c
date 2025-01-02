@@ -322,30 +322,72 @@ printf("\n");
    
 }
 
+void remplir(int T[], int N){
+    int i,j;
+
+     for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+     }
+}
+
+void aff(int T[], int N){
+    int i,j;
+    for(i=0;i<N;i++){
+       
+           printf("%d | ", T[i]);
+        
+    }
+}
+
+void tri( int T[], int N){
+    printf("\nLe tri par ordre decroissant : ");
+   int i,j;
+   int temp;
+    for(i=0;i<N-1;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]<=T[j]){
+                temp=T[j];
+                T[j]=T[i];
+                T[i]=temp;
+            }
+        }
+    }
+
+     aff(T,N);
+}
+
+void crois(int T[], int N){
+    int i,j;
+    int temp;
+ printf("\n\nLe tri par ordre croissant : ");
+    for(i=0;i<N-1;i++){
+        for(j=i+1;j<N;j++){
+            if(T[i]>=T[j]){
+                temp = T[i];
+                T[i]=T[j];
+                T[j]=temp;
+            }
+        }
+    }
+
+    aff(T,N);
+}
+
 int main(){
 
-   int i,N;
-
+   int N;
    do{
-    printf("\nVeillez entrez la taille de votre tableau : ");
+    printf("\nVeillez entrez la taille de votre tabloeau : ");
     scanf("%d", &N);
    }while(N<=0);
-int T[N];
-   for(i=0;i<N;i++){
-        printf("\nVeillez entrez la valeur de la case %d ", i+1);
-        scanf("%d", &T[i]);
-   }
 
-   printf("\nVoici votre tableau : ");
-   for(i=0;i<N;i++){
-    printf(" %d | ", T[i]);
-   }
+   int T[N];
+   remplir(T,N);
+   aff(T,N);
+   tri(T,N);
+   crois(T,N);
 
-
-   printf("\nLe min est : %d", minimum(T,N));
-   printf("\nLe maximum est : %d", maximum(T,N));
    
-   
-    inverse(T,N);
    return 0;
 }
