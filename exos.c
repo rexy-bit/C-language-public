@@ -244,51 +244,108 @@ void negposi(float T[],int N){
   }
 void solu(){
 
-    float X1,X2;
-    float X0;
-
-    if(delta()>0){
-        printf("\nL'equation possede deux solutions sur l'ensemble R : ");
-        X1 =(-b + sqrt(delta()))/2*a;
-        X2 = (-b + sqrt(delta()))/2*a;
-
-        printf("\nLes solutions X1 = %.2f, X2 = %.2f", X1, X2);
-
-    }else if(delta()==0){
-        printf("\nL'equation possede une solution unique sur R qui est : ");
-        X0 = -b/(2*a);
-        printf("\nLa solution de l'equation est : %.2f", X0);
-    }else{
-        printf("\nL'quation ne possede de solution sur R ");
-    }
+   
+     return 0;
+     
 }
 
+float sum(float T[], int N){
+        float S = T[1];
+          int i;
+        for(i=1;i<N;i++){
+            S = S + T[i];
+        }
+         return S;
+}
+float moyy(float T[], int N){
+    float moy = sum(T, N)/N;
+    
+    return moy;
+}
+
+float prod(float T[], int N){
+    float P = T[1];
+int i;
+    for(i=0;i<N;i++){
+          P=P*T[i];
+    }
+    return P;
+}
+
+int minimum(int T[], int N){
+
+    int min = T[1];
+    int i;
+
+    for(i=0;i<N;i++){
+        if(T[i]<min){
+            min = T[i];
+        }
+    }
+
+    return min;
+}
+
+int maximum(int T[], int N){
+
+    int max = T[1];
+int i;
+for(i=0;i<N;i++){
+    if(max<T[i]){
+        max = T[i];
+    }
+
+}
+
+return max;
+}
+
+void inverse(int T[], int N){
+    int i,j;
+    int V[N];
+
+    i=0;j=N;
+
+    while(i<N){
+       V[j-1]=T[i];
+     i++;
+     j--;
+    }
+    
+
+   printf("\nVoici le tableau inverser : ");
+printf("\n");
+   for(i=0;i<N;i++){
+    printf(" %d | ", V[i]);
+   }
+
+   
+}
 
 int main(){
 
+   int i,N;
+
+   do{
+    printf("\nVeillez entrez la taille de votre tableau : ");
+    scanf("%d", &N);
+   }while(N<=0);
+int T[N];
+   for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d ", i+1);
+        scanf("%d", &T[i]);
+   }
+
+   printf("\nVoici votre tableau : ");
+   for(i=0;i<N;i++){
+    printf(" %d | ", T[i]);
+   }
+
+
+   printf("\nLe min est : %d", minimum(T,N));
+   printf("\nLe maximum est : %d", maximum(T,N));
    
-    int i,N;
-
-    do{
-        printf("\nVeillez entrez l ataille de vpotre tableau : ");
-        scanf("%d", &N);
-    }while(N<=0);
-
-    float V[N];
-
-    for(i=0;i<N;i++){
-        printf("\nVeillez netrez la valeur de la case %d : ", i+1);
-        scanf("%f", &V[i]);
-    }
-
-    printf("\nVoici votre tableau : ");
-    for(i=0;i<N;i++){
-        printf(" %f | ", V[i]);
-    }
-
-    printf("\nLa somme de votre tableau est : %.2f", somme(V, N));
-    printf("\nLe produit de votre tableau est : %.2f", produit(V, N));
-    printf("\nLa moyenne de votre tableau est : %.2f", moyenne(V,N));
-    negposi(V,N);
-     return 0;
+   
+    inverse(T,N);
+   return 0;
 }
