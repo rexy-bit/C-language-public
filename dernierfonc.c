@@ -33,8 +33,9 @@ void crois(int T[], int N){
             }
         }
     }
-
+     printf("\nVoici votre tableau trier par ordre croissant : ");
     aff(T,N);
+    printf("\n");
 
 }
 
@@ -50,24 +51,32 @@ void dec(int T[], int N){
             }
         }
     }
+     printf("\nVoici votre tableau trier par ordre decroissant : ");
     aff(T,N);
+    printf("\n");
 
 }
 
+int inverse(){
+
+    int inv,n;
+
+    printf("\nVeillez entrez un entier n : ");
+    scanf("%d", &n);
+inv = 0;
+    while(n>0){
+        inv = inv*10 + n%10;
+        n = n/10;
+    }
+
+    printf("\nL'inverse est : %d", inv);
+
+    return 0;
+}
+
 int main(){
-  int N;
+  inverse();
 
-  do{
-    printf("\nVeillez entrez la taille de votre tableau : ");
-    scanf("%d", &N);
-  }while(N<=0);
-
-  int T[N];
-  remp(T,N);
-  aff(T,N);
-  crois(T,N);
-  dec(T,N);
-
-  return 0;
+  
 
 }
