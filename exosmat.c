@@ -209,7 +209,7 @@ void Tminmax(int T[], int N, int min,int max){
     for(i=1;i<N;i++){
         if(T[i]<min){
             min = T[i];
-        }else if(max>T[i]){
+        }else if(max<T[i]){
             max = T[i];
         }
     }
@@ -250,37 +250,82 @@ void Trans(int N, float B[N][N],float A[N][N]){
         
     }
 }
-int exoexam2(){
+int transpose(){
 
+    int i,N,j;
+
+    do{
+        printf("\nveillez entrez la taille de votre matrice carree : ");
+        scanf("%d", &N);
+    }while(N<=0);
+  int A[N][N];
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf("\nVeillez entrez la valeur ligne %d colomne %d : ",i+1,j+1 );
+            scanf("%d", &A[i][j]);
+        }
+    }
+    printf("\nVoici votre magnifique matrice carre : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf("%d | ", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    int B[N][N];
+
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            B[j][i]=A[i][j];
+        }
+    }
+
+    printf("\nVoici la matrice transpose : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf(" %d | ", B[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+
+}
+
+int pascal(){
     int N,i,j;
 
     do{
-        printf("\nVeillez entrez la taille de votre tableau : ");
+        printf("\nVeillez entrez la taille de votre matrice carre : ");
         scanf("%d", &N);
     }while(N<=0);
 
-    int T[N];
+    int A[N][N];
+    printf("\nRemplissage du triangle de pascal : \n");
+
     for(i=0;i<N;i++){
-        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
-        scanf("%d", &T[i]);
+        A[i][0]=1;
+        A[i][i]=1;
     }
 
-    printf("\nVoici votre tableau : \n");
-    for(i=0;i<N;i++){
-        printf(" %d | ", T[i]);
+    for(i=2;i<N;i++){
+        for(j=1;j<i;j++){
+            A[i][j]=A[i-1][j]+A[i-1][j-1];
+        }
     }
 
-    int min,max;
-    Tminmax(T,N,min,max);
-    printf("\nLe maximum est : %d,\nLe minimum est : %d", min,max);
-    
-    float A[N][N], B[N][N], C[N][N];
+    for(i=0;i<N;i++){
+        for(j=0;j<=i;j++){
+            printf(" %d | ", A[i][j]);
+        }
+        printf("\n");
+    }
 
-    return 0;
-    
+return 0;
 }
 int main(){
-     exoexam2();
+     pascal();
      return 0;
 
      
