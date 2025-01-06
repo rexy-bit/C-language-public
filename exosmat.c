@@ -324,8 +324,184 @@ int pascal(){
 
 return 0;
 }
+
+int sommemat(){
+    int i,j,N,M;
+
+  
+
+    do{
+        printf("\nVeillez entrez le nombre de lignes  : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    do{
+        printf("\nveillez entrez le nombre de colomne : ");
+        scanf("%d", &M);
+    }while(M<=0);
+
+      int A[N][M];
+    int B[N][M];
+    
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf("\nVeillez entrez la valeur [%d, %d] : ", i+1,j+1);
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("\nRemplissage de la matrice B : \n");
+    for(i=0;i<N;i++){
+       for(j=0;j<N;j++){
+         printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+         scanf("%d", &B[i][j]);
+       }
+    }
+
+    int C[N][M];
+
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            C[i][j]=A[i][j]+B[i][j];
+        }
+    }
+
+    printf("\nLa somme des deux matrices est : \n");
+
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf(" %d | ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+    }
+
+    int produit(){
+
+        int i,j,N,M,P,pr,k;
+
+        do{
+            printf("\nVeillez entre le nombre de lignes de la matrice A et colomnes de la matrice B : ");
+            scanf("%d",&N );
+
+        }while(N<=0);
+
+        do{
+            printf("\nVeillez entrez le nombre de colomnes de la matrice A : ");
+            scanf("%d", &M);
+        }while(M<=0);
+
+        do{
+            printf("\nVeillez entrez le nombre de lignes de la matrice B : ");
+            scanf("%d", &P);
+        }while(P<=0);
+
+        int A[N][M];
+        int B[P][N];
+
+        printf("\nRemplissage de la matrice A : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<N;j++){
+                printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+                scanf("%d", &A[i][j]);
+            }
+        }
+
+        printf("\nRemplissage de la matrice B : \n");
+        for(i=0;i<P;i++){
+            for(j=0;j<N;j++){
+                printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+                scanf("%d", &B[i][j]);
+            }
+        }
+
+        int C[P][M];
+
+        for(i=0;i<P;i++){
+            for(j=0;j<M;j++){
+                pr = 0;
+                for(k=0;k<N;k++){
+                    pr += A[k][j]*B[i][k];
+                }
+                C[i][j]=pr;
+            }
+        }
+
+        printf("\nLa matrice A est : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+
+        printf("\nLa matrice B est : ");
+        for(i=0;i<P;i++){
+            for(j=0;j<N;j++){
+                printf(" %d | ", B[i][j]);
+            }
+            printf("\n");
+        }
+
+
+        printf("\nLe produit des deux matrices est : \n");
+
+        for(i=0;i<P;i++){
+            for(j=0;j<M;j++){
+               printf(" %d | ", C[i][j]);
+            }
+            printf("\n");
+        }
+
+        return 0;
+
+    }
+
+    int diago(){
+        int i,j,N;
+
+        do{
+        printf("\nVeillez entrez la taille de votre matrice : ");
+        scanf("%d", &N);
+        }while(N<=0);
+
+        int A[N][N];
+
+        printf("\nRemplissage de la matrice : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<N;j++){
+                printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+                scanf("%d", &A[i][j]);
+            }
+        }
+
+        printf("\nVoici votre matrice : ");
+        for(i=0;i<N;i++){
+            for(j=0;j<N;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+
+         int S1 = 0;
+         int S2 = 0;
+          j = N-1;
+         for(i=0;i<N;i++){
+            S1 = S1 + A[i][i];
+            S2 = S2 + A[i][j];
+            j--;
+         }      
+
+         printf("\nLa somme de la diagonale principale est : %d ", S1);
+         printf("\nLa somme de la diagonale non principale est : %d", S2);
+
+         return 0;
+
+    }
 int main(){
-     pascal();
+     diago();
      return 0;
 
      
