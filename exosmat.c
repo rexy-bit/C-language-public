@@ -500,8 +500,114 @@ int sommemat(){
          return 0;
 
     }
+
+    int pascal2(){
+        int i,j,N;
+
+        do{
+            printf("\nVeillez entrez la taille de votre matrice : ");
+            scanf("%d", &N);
+        }while(N<=0);
+     int A[N][N];
+      
+      for(i=0;i<N;i++){
+        A[i][0]=1;
+        A[i][i]=1;
+      }
+
+      for(i=2;i<N;i++){
+        for(j=1;j<=i-1;j++){
+            A[i][j]=A[i-1][j]+A[i-1][j-1];
+        }
+      }
+
+      printf("\nVoici votre triangle de pascal : \n");
+      for(i=0;i<N;i++){
+       for(j=0;j<=i;j++){
+        printf(" %d | ", A[i][j]);
+       }
+       printf("\n");
+      }
+
+    }
+
+
+    int progcalc(){
+
+        int i,j,N,M;
+
+        do{
+            printf("\nVeillez entrez le nombre de lignes : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        do{
+            printf("\nveillez entrez le nombre de colomnes : ");
+            scanf("%d",&M);
+        }while(M<=0);
+
+        int A[N][M];
+
+        int pos[M];
+        int k=0;
+
+        printf("\nRemplissage de la matrice : ");
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+                scanf("%d", &A[i][j]);
+            }
+        }
+
+        printf("\nVoici votre matrice : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+   int T[M];
+        printf("\nRemplissage du vecteur : ");
+        for(i=0;i<M;i++){
+            printf("\nVeillez entrez la valeur %d du vecteur : ", i+1);
+            scanf("%d", &T[i]);
+        }
+
+        printf("\nVoici votre tableau : \n");
+        for(i=0;i<N;i++){
+            printf(" %d | ", T[i]);
+        }
+bool p;
+        for(i=0;i<N;i++){
+            p = 1;j=1;
+            while(j<M && p == true){
+              if(T[j]!=A[i][j]){
+                 p = false;
+              }
+              j++;
+            }
+
+            if(p==true){
+                pos[k]=i+1;
+                k++;
+            }
+        }
+
+        if(k==0){
+            printf("\nLe vecteur n'existe pas dans le tableau");
+        }else{
+            printf("\nLe vecteur existe dans le tableau : ");
+            printf("\nIl se repete %d fois", k);
+            printf("\nLes positions dans le tableau sont : \n");
+            for(i=0;i<k;i++){
+                printf(" %d | ", pos[i]);
+            }
+        }
+
+        return 0;
+    }
 int main(){
-     diago();
+     progcalc();
      return 0;
 
      
