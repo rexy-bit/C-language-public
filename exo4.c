@@ -1,35 +1,30 @@
 #include <stdio.h>
-#include <stdbool.h>
-
+#include <math.h>
 
 int main(){
 
-    int A,i;
-    bool p;
+    int i,N;
+    float f,max;
 
-    printf("\nVeillez entrer un entier A : ");
-    scanf("%d", &A);
+    do{
+        printf("\nEnter a positive integer : ");
+        scanf("%d", &N);
+    }while(N<0);
 
-    if(A == 1){
-        p = false;
-    }else{
-        p = true;
+    max = 150*sin(0)/1;
 
-    }
-    for(i = 2;i<=A - 1;i++){
-        if(A%i == 0){
-            p = false;
+    for(i=0;i<N;i++){
 
+        f = 150*sin(i)/(1 + i);
+
+        if(max <= f){
+            max = f;
         }
+
+        
     }
 
-    if(p == true){
-        printf("\n%d est premier ", A);
-    }else{
-        printf("\n%d n'est pas premier ", A);
-    }
-
-    return 0;
+printf("\nLe max est : %.2f", max);
 
 
 }
