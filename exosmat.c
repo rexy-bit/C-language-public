@@ -787,8 +787,112 @@ bool p;
 
         return 0;
     }
+
+    int matinv(){
+
+        int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre matrice : ");
+        scanf("%d", &N);
+    }while(N<=0);
+    int A[N][N];
+
+    printf("\nRemplissage de la matrice : ");
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,j+1);
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("\nVoici votre matrice' : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf(" %d | ", A[i][j]);
+        }
+        printf("\n");
+    }
+int temp;
+    printf("\nVoici l'invesre par rapport a la diagonale principale : ");
+    for(i=0;i<N-1;i++){
+        for(j=i+1;j<N;j++){
+            temp = A[i][j];
+            A[i][j]=A[j][i];
+            A[j][i]=temp;
+        }
+    }
+
+    printf("\nVotre matrice apres l'inversement est : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<N;j++){
+            printf(" %d | ", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+
+    }
+
+    int matr(){
+        int i,j,N,M;
+
+        do{
+            printf("\nVeillez entrez le nombre de lignes : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        do{
+            printf("\nVeillez entrez le nombre de colomnes : ");
+            scanf("%d",&M);
+        }while(M<=0);
+
+        int A[N][M];
+
+        printf("\nRemplissage de la matrice : ");
+
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf("\nVeilelz entrez la valeur [%d , %d] : ", i+1,j+1);
+                scanf("%d", &A[i][j]);
+            }
+        }
+
+        printf("\nVoici votre matrice : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+int k,temp;
+        printf("\nL'inverse des colomnes : ");
+        for(i=0;i<N;i++){
+            j=M-1;
+            k=0;
+            while(k<j){
+                temp = A[i][k];
+                A[i][k]=A[i][j];
+                A[i][j]=temp;
+                j--;
+                k++;
+            }
+        }
+
+
+        printf("\nLa matrice apres l'inversemant est : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<M;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+
+        return 0;
+    }
 int main(){
-     progcalculus();
+     matr();
      return 0;
 
      
