@@ -574,7 +574,7 @@ int sommemat(){
         }
 
         printf("\nVoici votre tableau : \n");
-        for(i=0;i<N;i++){
+        for(i=0;i<M;i++){
             printf(" %d | ", T[i]);
         }
 bool p;
@@ -606,8 +606,189 @@ bool p;
 
         return 0;
     }
+
+
+    int prog(){
+        double num1,num2,result;
+        char op;
+        int p;
+
+        printf("\nBienvenu dans le programme calculatrice : \n");
+
+   do{
+    printf("\nVeillez choisir un operateur(+,-,/,*) : \n");
+    scanf(" %c", &op);
+
+    printf("\nVeillez entrez le premier numero : ");
+    scanf("%lf", &num1);
+
+    printf("\nVeillez entrez le deuxieme numero : ");
+    scanf("%d", &num2);
+
+    switch(op){
+        case '+':
+            result = num1 + num2;
+            printf("\nLa somme est : %.2lf", result);
+            break;
+
+        case '-':
+            result = num1 - num2;
+            printf("\nLe result est : %.2lf", result);
+            break;
+
+        case '*':
+        result = num1*num2;
+        printf("\nLe resultet est : %.2lf", result);
+        break;
+
+        case '/':
+
+           if(num2 == 0){
+            printf("\nMath error impossible d'efectuer la division sur un null");
+
+           }else{
+             result = num1 / num2;
+             printf("\nLe result est : %.2lf", result);
+           }
+           break;
+
+
+           default : 
+             printf("\nMath error veillez verifier que vous avez entrez l'operateur correct");
+             break;
+
+    }
+
+    printf("\nVoulez vous continuer ?\nTaper 1 pour 'Oui' ou 0 pour 'Non' : ");
+    scanf("%d", &p);
+   }while(p!=0);
+
+
+   return 0;
+       
+
+    }
+
+    progcalculus(){
+
+        double num1,num2,result;
+        double n;
+        int op;
+        int a,b,r;
+        int cpt;
+
+        do{
+            printf("\nVoici le menu du programme\nChoisissez la tache que vous voulez effectuer : ");
+            printf("\n");
+            printf("\n------------------------------------------------------------");
+            printf("\nTapez 1 pour la somme : ");
+            printf("\nTapez 2 pour la soustraction : ");
+            printf("\nTapez 3 pour la multiplication : ");
+            printf("\nTapez 4 pour la divison : ");
+            printf("\nTapez 5 pour trouver le reste de la division de 2 nombres : ");
+            printf("\nTapez 6 pour calculer la puissance d'un nombre : ");
+            scanf(" %d", &op);
+               printf("\n------------------------------------------------------------");
+            
+            switch(op){
+                case 1 : 
+
+                printf("\nVeillez entrez le premier numùero : ");
+                scanf("%lf", &num1);
+
+                printf("\nVeillez entrez le deuxieme numero : ");
+                scanf("%lf", &num2);
+                result = num1 + num2;
+                printf("\nLa somme est : %lf", result);
+
+                break;
+
+                case 2 : 
+                  printf("\nC'est la soustraction : ");
+                  printf("\nVeillez entrez le premier numero : ");
+                  scanf("%lf", &num1);
+
+                  printf("\nVeillez entrez le numero 2 : ");
+                  scanf("%lf", &num2);
+
+                  result = num1 - num2;
+                
+                  break;
+
+            
+              case 3 : 
+                          printf("\nC'est la soustraction : ");
+                  printf("\nVeillez entrez le premier numero : ");
+                  scanf("%lf", &num1);
+
+                  printf("\nVeillez entrez le numero 2 : ");
+                  scanf("%lf", &num2);
+
+                  result = num1 * num2;
+                  printf("\nThe result : %.2lf", result);
+                  break;
+
+            case 4 : 
+               printf("\nC'est la division : ");
+
+               
+                printf("\nVeillez entrez le premier numero : ");
+                  scanf("%lf", &num1);
+
+                  printf("\nVeillez entrez le numero 2 : ");
+                  scanf("%lf", &num2);
+
+                  if(num2 == 0){
+                    printf("\nMath error divion sur 0 impossible");
+                  }else{
+                  result = num1/num2;
+                  printf("\nThe result is : %lf", result);
+                  }
+  
+                  break;
+
+            case 5 : 
+              printf("\nC'est le reste de la divsion entiere : ");
+              printf("\nVeillez entrez le premier numero : ");
+              scanf("%d", &a);
+
+              printf("\nVeillez entrez le deuxieme numero : ");
+              scanf("%d", &b);
+              r = a%b;
+              printf("\nLe reste de la division entiere est : %d", r);
+              break;
+
+            case 6 : 
+             
+             printf("\nVeillez entrez votre numero : ");
+             scanf("%d", &a);
+
+             printf("\nVeillez entrez la puissance");
+             scanf("%d", &b);
+
+             r = pow(a, b);
+             printf("\nLe resulat est : %d", r);
+
+              default : 
+                printf("\nEreur assurez vous d'avoir entrez le nombre correct : ");
+               
+                
+                
+            }
+
+            printf("\nVoulez vous recommencer ?\nTaper 1 pour 'Oui' ou 0 pour 'Non'");
+            scanf("%d", &cpt);
+
+            
+        }while(cpt!=0);
+
+        printf("\nMerci de nous avoir choisie on espere que vous avez adorer utiliser notre application : ");
+
+
+        return 0;
+    }
 int main(){
-     progcalc();
+     progcalculus();
      return 0;
 
      
