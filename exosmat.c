@@ -891,8 +891,74 @@ int k,temp;
 
         return 0;
     }
+    int matricet(){
+
+        int i,j,N;
+
+        do{
+        printf("\nVeillez entrez la taille de votre matrice : ");
+        scanf("%d", &N);
+        }while(N<=0);
+
+        int A[N][N];
+
+        for(i=0;i<N-1;i++){
+            for(j=i+1;j<N;j++){
+                A[i][j]=0;
+            }
+        }
+
+        for(i=1;i<N;i++){
+            for(j=0;j<i;j++){
+                A[i][j]=0;
+            }
+        }
+  printf("\nRemplissage de la diagonale de la matrice : \n");
+        for(i=0;i<N;i++){
+                printf("\nVeillez entrez la valeur [%d , %d] : ", i+1,i+1);
+                scanf("%d", &A[i][i]);
+            
+        }
+         printf("\nVoici votre matrice triangulaire : \n");
+        for(i=0;i<N;i++){
+            for(j=0;j<N;j++){
+                printf(" %d | ", A[i][j]);
+            }
+            printf("\n");
+        }
+
+        return 0;
+
+    }
+
+    int testbab(){
+
+        int i,N;
+
+        do{
+            printf("\nVeillez entrez le nombre d'etudiants : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        int notes[N];
+        char noms[N][50];
+
+        for(i=0;i<N;i++){
+            printf("\nVeillez entrez le nom de l'etudiant %d : ", i+1);
+            scanf("%s", noms[i]);
+
+            printf("\nVeillez entrez la note de %s : ", noms[i]);
+            scanf("%d", &notes[i]);
+        }
+
+        for(i=0;i<N;i++){
+            printf("\n%49s a eu : %d/20", noms[i], notes[i]);
+        }
+
+        return 0;
+    }
 int main(){
-     matr();
+     testbab();
      return 0;
 
      
