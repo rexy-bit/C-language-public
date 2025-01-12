@@ -529,6 +529,8 @@ int sommemat(){
        printf("\n");
       }
 
+      return 0;
+
     }
 
 
@@ -623,7 +625,7 @@ bool p;
     scanf("%lf", &num1);
 
     printf("\nVeillez entrez le deuxieme numero : ");
-    scanf("%d", &num2);
+    scanf("%lf", &num2);
 
     switch(op){
         case '+':
@@ -957,8 +959,155 @@ int k,temp;
 
         return 0;
     }
+
+
+void premier(int x){
+      int i;
+   bool p;
+      if(x==1){
+        p = false;
+      }else{
+         i=2;
+         p==true;
+
+         while(i<=x/2 && p==true){
+            if(x%i==0){
+               p=0;
+            }
+            i++;
+         }
+      }
+
+      if(p==1){
+        printf("\n%d est premier", x);
+      }else{
+        printf("\n%d n'est pas premier", x);
+      }
+
+}
+
+int min(int T[], int N){
+    int i;
+    int min = T[0];
+
+   for(i=1;i<N;i++){
+    if(T[i]<min){
+        min = T[i];
+    }
+   }
+   return min;
+}
+
+int max(int T[], int N){
+    int i;
+    int max = T[0];
+
+    for(i=1;i<N;i++){
+        if(T[i]>max){
+            max = T[i];
+        }
+    }
+
+    return max;
+}
+
+float moye(int T[], int N){
+    float moy;
+
+    moy = (max(T,N) + min(T,N))/2;
+
+    return moy;
+
+}
+
+int somme(int T[], int N){
+     int s;
+     s=0;
+     int i;
+     for(i=0;i<N;i++){
+        s += T[i];
+     }
+     return s;
+}
+
+int produi(int T[], int N){
+    int p;
+    p=1;
+
+    for(int i=0;i<N;i++){
+         p *= T[i];
+    }
+
+    return p;
+}
+
+void progg(){
+
+    int i,j;
+    int N;
+    do{
+        printf("\nVeillez entrez la taille de votre vecteur : ");
+        scanf("%d", &N);
+    }while(N<=0);
+ 
+ int V[N];
+    for(i=0;i<N;i++){
+         printf("\nveillez entrez la valeur de la case %d : ", i+1);
+         scanf("%d", &V[i]);
+    
+    }     
+
+    printf("\nVoici votre tableau : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", V[i]);
+    }
+
+    printf("\nL'inverse de votre tableau est : ");
+    j=N-1;
+    i=0;
+    int temp;
+
+    while(i<j){
+        temp = V[i];
+        V[i]= V[j];
+        V[j]=temp;
+        j--;
+        i++;
+    }
+    printf("\n\nVoici votre tableau inverser : ");
+    for(i=0;i<N;i++){
+        printf(" %d | ", V[i]);
+    }
+
+    printf("\nLe tri par ordre croissant : ");
+    for(i=0;i<N;i++){
+        for(j=i+1;j<N;j++){
+            if(V[i]>V[j]){
+                temp = V[i];
+                V[i]=V[j];
+                V[j]=temp;
+            }
+        }
+    }
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", V[i]);
+    }
+    printf("\nLe minimum est : %d", min(V,N));
+    printf("\nle maximum est : %d", max(V,N));
+    printf("\nLa moyenne est : %.2f", moye(V,N));
+    printf("\nLe produit est : %d", produi(V,N));
+    printf("\nLa sommme est : %d", somme(V,N));
+     
+
+
+}
+
+
 int main(){
-     testbab();
+
+    progg();
+    
      return 0;
 
      
