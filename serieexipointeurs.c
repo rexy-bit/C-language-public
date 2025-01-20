@@ -445,9 +445,165 @@ void paire(){
         }
 
     }
+
+    void afftab(){
+
+        int N;
+
+        do{
+            printf("\nVeillez entrez la taille de votre tableau : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        int T[N];
+
+        int *p = T;
+
+        for(p=T;p<N+T;p++){
+            printf("\nVeillez entrez la valeur de la case %d : ", p - T  );
+            scanf("%d", p);
+        }
+
+        printf("\nVoici votre tableau : \n");
+        for(p=T;p<T+N;p++){
+            printf(" %d | ", *p);
+        }
+    }
+
+    int suppval(){
+
+        int N;
+
+        do{
+            printf("\nVeillez entrez la taille de votre tableau : ");
+            scanf("%d", &N);
+        }while(N<=0);
+
+        int T[N];
+
+    int *p = T;
+
+    printf("\nRemplissage du tableau : ");
+    for(p=T;p<T+N;p++){
+        printf("\nVeilloez entrez la valeur de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : \n");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+
+    int val;
+
+    printf("\nVeillz entrez l'indice de la case de la valeur que vous voulez supprimer : ");
+    scanf("%d", &val);
+
+    int *p2 = T;
+   for(p=T;p<T+N;p++){
+    *p2 = *p;
+
+    if(*p2 != val){
+        p2++;
+    }
+   }
+
+   N = p2-T;
+   printf("\nVoici votre tableau apres la supression de %d : \n", val);
+   for(p=T;p<T+N;p++){
+    printf(" %d | ", *p);
+   }
+
+    return 0;
+    }
+
+  void suppval2(){
+
+    int N;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    int i,j;
+
+    for(i=0;i<N;i++){
+        printf("\nveillez entrez la valeur de la case %d : \n", i+1);
+        scanf("%d", &T[i]);
+    }
+
+    printf("\nvoici votre tableau : \n");
+
+    for(i=0;i<N;i++){
+       printf(" %d | ", T[i]);
+    }
+
+    int val;
+
+    printf("\nveillez entrez la valeru que vous voulez suprimmer : ");
+    scanf("%d", &val);
+
+    for(i=0;i<N;i++){
+        
+        if(T[i]==val){
+            for(j=i;j<N-1;j++){
+                T[j]=T[j+1];
+            }
+            N--;
+            i--;
+        }
+    }
+
+    printf("\nVoici votre tableau apres la supression de la valeur : %d\n", val);
+
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+  }
+
+  void exo87(){
+
+    int N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : \n");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+
+    printf("\nRemplissage du tableau : \n");
+
+    for(p=T;p<T+N;p++){
+        printf("\nveillez netrez la valeur de la case %d : \n", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : \n");
+    for(p=T;p<T-N;p++){
+        printf(" %d | ", *p);
+    }
+
+   int *p2;
+
+   for(p=T,p2=T + (N-1); p<p2 ; p++ ,p2--){
+       int temp = *p;
+       *p = *p2;
+       *p2 = temp;
+   }
+printf("\nVoici votre tableau inverser : \n");
+   for(p=T;p<T+N;p++){
+    printf(" %d | ", *p);
+   }
+  }
 int main(){
    
-   supp();
+   exo87();
 
     
    return 0;
