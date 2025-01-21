@@ -745,9 +745,71 @@ printf("\nVeillez entrez la valeur que vous voulez supprimer : ");
     }
 
   }
+
+  void tricroi(){
+
+    int N;
+
+    do{
+        printf("\nVeuillez entrez la taille de votre tableau_ : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+    printf("\nRemplissage du tableau : ");
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez la valeru de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+    p = T;
+    int *p2;
+    int temp;
+
+    for(p=T;p<T+(N-1);p++){
+        for(p2=p+1;p2<T+N;p2++){
+  if(*p2<*p){
+         temp = *p;
+            *p= *p2;
+            *p2 = temp;
+        }
+        }
+      
+        
+
+    }
+
+    printf("\nVoici votre tableau trier par ordre croissant : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+    for(p=T;p<T+(N-1);p++){
+        for(p2 = p+1;p2<T+N;p2++){
+   if(*p< *p2){
+             temp = *p;
+            *p = *p2;
+            *p2 = temp;
+        }
+        }
+     
+    }
+
+    printf("\nVoici votre tableau trier par ordre croissant : \n");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+  }
 int main(){
    
-   fusio();
+   tricroi();
 
     
    return 0;
