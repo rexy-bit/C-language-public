@@ -601,9 +601,153 @@ printf("\nVoici votre tableau inverser : \n");
     printf(" %d | ", *p);
    }
   }
+
+  int exotabp(){
+
+    int N;
+
+    do{
+        printf("\nveillez entrez le nombre de lignes : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+
+    printf("\nRemplissage du tableau : ");
+
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez lma vcaleur de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : ");
+
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+   int val;
+
+printf("\nVeillez entrez la valeur que vous voulez supprimer : ");
+   scanf("%d", &val);
+
+   int *p2 = T;
+   for(p=T;p<T+N;p++){
+    *p2 = *p;
+    if(*p2 != val){
+        p2++;
+    }
+   }
+
+   N = p2 - T;
+    printf("\nVoici votre tableau apres avoir supprimer %d : \n", val) ;
+   for(p=T;p<T+N;p++){
+       printf(" %d | ", *p);
+       }
+
+       return 0;
+
+
+  }
+
+  void invp(){
+
+    int N;
+
+    do{
+        printf("\nVeillez netrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+
+    printf("\nRemplissage de votre tableau : ");
+
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez la valeru de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+    p = T;
+    int *p2 = T + (N-1);
+
+    while(p<p2){
+        int temp = *p;
+        *p = *p2;
+        *p2 = temp;
+        p++;
+        p2--;
+    }
+
+    printf("\nVoici votre tableau inverse : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+  }
+
+  void fusio(){
+
+    int M,N;
+
+    do{
+        printf("\nVeillez entrez la taille du tableau A : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    do{
+        printf("\nVeillez entrez la taille de tableau B : ");
+        scanf("%d", &M);
+    }while(M<=0);
+
+    int A[N], B[M];
+    int *pA = A;
+    int *pB = B;
+
+    printf("\nRemplissage tableau A : ");
+    for(pA = A; pA<A + N;pA++){
+        printf("\nVeillez entrez la valeur de la case %d : ", pA - A + 1);
+        scanf("%d", pA);
+    }
+
+    printf("\nVoici votre tableau A : ");
+    for(pA = A;pA<A+N;pA++){
+        printf(" %d | ", *pA);
+    }
+    printf("\nRemplissage du tableau B : ");
+    for(pB = B;pB<B+M;pB ++){
+        printf("\nVeillez entrez la valeur de la case %d : ");
+        scanf("%d", pB);
+
+
+    }
+
+    printf("\nVoici votre tableau B : ");
+    for(pB = B;pB<B+M;pB++){
+        printf(" %d | ", *pB);
+    }
+
+    printf("\nFusinnage des deux tableau : ");
+    for(pB = B,pA = A + N;pB<M+B;pB++,pA++){
+           *pA = *pB;
+           N++;
+    }
+
+    printf("\nVoici votre tableau fusinnais : \n");
+    for(pA = A;pA<A+N;pA++){
+        printf(" %d | ", *pA);
+    }
+
+  }
 int main(){
    
-   exo87();
+   fusio();
 
     
    return 0;
