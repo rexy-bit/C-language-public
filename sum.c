@@ -1,20 +1,25 @@
 #include <stdio.h>
+int main()
+{
+    int num;
+    int sum = 0;
 
-int main(){
+    do{
+        printf("Enter an integer number of your choise (enter 0 to stop) :\n");
+        scanf("%d", &num);
 
-    int i,n,S,E;
+        if( num > 0 ){
+        sum+=num;
+        printf("The sum of positive numbers added is : %d\n", sum);
+        }else if( num < 0){
+            printf("Negative integers are not addes .ignored.\n");
+        }
 
-    printf("\nEnter a value for n : ");
-    scanf("%d", &n);
+    }while( num =! 0);
+     printf("The sum of the numbers added is :%d\n", num);
 
-    S = 1;
-    E = 1;
 
-    for(i = 2; i<=n;i++){
+     return 0;
 
-        S = S + i;
-        E = E*S;
-    }
-
-    printf("E = %d", E);
 }
+   
