@@ -807,9 +807,166 @@ printf("\nVeillez entrez la valeur que vous voulez supprimer : ");
     }
 
   }
+
+  void paireimpaire(){
+
+    int x;
+
+    int *p = &x;
+
+    printf("\nVeillez entrez un entier x : ");
+    scanf("%d", &x);
+
+    if(*p%2 == 0){
+        printf("\n%d est paire", x);
+    }else{
+        printf("\n%d est impaire", x);
+    }
+
+    
+  }
+
+  void T(){
+
+    int N;
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : \n");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+
+    printf("\nVeillez remplir votre tableau : ");
+    for(p=T;p<T+N;p++){
+
+        printf("\nVeillez entrez la valeur de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tbaleau : \n");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+    int val;
+
+    printf("nVeillez entrez la valeur que vous voulez supprimer : ");
+    scanf("%d", &val);
+
+    int *p2 = T;
+    for(p=T;p<T+N;p++){
+        *p2 = *p;
+        if(*p2 != val){
+            p2++;
+        }
+    }
+    N = p2 -T;
+    printf("\nVoici votre tableau apres la supression de %d : \n", val);
+    for(p=T;p<N+T;p++){
+        printf(" %d | ", *p);
+    }
+
+    
+  }
+
+  void invT(){
+
+    int N;
+
+    do{
+
+       printf("\nveillez entrez la taille de votre tableau : ");
+       scanf("%d", &N);
+    }while(N<=0);
+   int T[N];
+    int *p=T;
+
+    printf("\nRemplissage du tableau : ");
+    for(p=T;p<T+N;p++){
+         printf("\nVeillez entrez la valeur de la case %d : ", p-T+1);
+         scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : \n");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+    printf("\nVoici l'inverse de votre tableau : ");
+   int *p2 = T+(N-1);
+   p = T;
+   while(p<p2){
+    int temp = *p;
+    *p = *p2;
+    *p2 = temp;
+    p++;
+    p2--;
+   }
+
+   for(p=T;p<T+N;p++){
+    printf(" %d | ", *p);
+   }
+
+  }
+
+  void fus(){
+
+    int N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+
+    int *p = T;
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez la valeur de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nVoici votre tableau : \n");
+    for(p=T;p<T+N;p++)
+    {
+        printf(" %d | ", *p);
+    }
+
+    int M;
+    do{
+        printf("\nVeillez entrez la taille de votre deuxieme tableau : ");
+        scanf("%d", &M);
+    }while(M<=0);
+    int A[M];
+    int *p2 = A;
+
+    printf("\nRemplissage du deuxieme tableau : ");
+    for(p2 = A;p2<A+M;p2++){
+        printf("Veillez entrez la valeur de la case %d : ", p2-T+1);
+        scanf("%d", p2);
+    } 
+
+    printf("\nVoici votre deuxieme tableau : \n");
+    for(p2=A;p<A+M;p2++){
+        printf(" %d | ", *p2);
+
+    }
+
+    printf("\nFusion des deux tableau : \n");
+
+    for(p = T+N,p2 = A;p2<A+M;p++,p2++){
+        *p = *p2;
+        N++;
+    }
+
+    for(p=T;p<T+N;p++){
+            printf(" %d | ", *p);
+    }
+  }
 int main(){
    
-   tricroi();
+   fus();
 
     
    return 0;
