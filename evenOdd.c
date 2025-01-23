@@ -1,17 +1,18 @@
 #include <stdio.h>
+
 int main(){
-    double num;
+    int num;
 
-    printf("Enter an integer number of your choise :");
-    scanf("%lf", &num);
+    printf("Enter an integer number :");
+    scanf("%d", &num);
 
-    
     if(num % 2 == 0){
-        printf("Enter the number you entered is even\n",num);
-    }else if(num % 2 == 0){
-        printf("The number you entered is odd\n", num);
+        printf("%d is even", num);
+    }else if(num % 2 != 0){
+        printf("%d is odd", num);
+    }else{
+        printf("Invalid input! Please check that you entered an integer number :)");
     }
-    
 
     return 0;
 }
