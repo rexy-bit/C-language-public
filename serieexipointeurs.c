@@ -964,9 +964,141 @@ printf("\nVeillez entrez la valeur que vous voulez supprimer : ");
             printf(" %d | ", *p);
     }
   }
+
+  void div2(){
+
+    int x;
+    int *p = &x;
+
+    printf("\nVeillez entrez un entier : ");
+    scanf("%d", &x);
+
+    int i;
+    printf("\nLes diviseurs de %d sont : ", x);
+    for(i=1;i<=*p/2;i++){
+        if(*p%i==0){
+            printf("\n%d", i);
+        }
+    }
+    printf("\n%d", x);
+
+
+  }
+
+  void supp3(){
+
+    int N;
+      int M;
+
+    do{
+        printf("\nVeillez entrez la taillde de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+
+    printf("\nRemplissage du tableau : ");
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez la valeur de la case %d : ", p-T+1);
+        scanf("%d", p);
+    }
+
+    printf("\nAffichage du tableau : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+
+
+    do{
+        printf("\nVeillez entrez la taille du tableau A : ");
+        scanf("%d", &M);
+    }while(M<=0);
+
+    int A[M];
+
+    int *p2 = A;
+    printf("\nRemplissage du deuxieme tableau : ");
+    for(p2 = A;p2<A+M;p2++){
+        printf("\nVeillez entrez la valeur de la case %d : ", p2-A+1);
+        scanf("%d", p2);
+    }
+
+    printf("\nAffichage du deuxieme tableau : ");
+    for(p2=A;p2<A+M;p2++){
+        printf(" %d | ", *p2);
+    }
+
+    printf("\nFusionage des deux tableau : \n");
+    for(p=T+N,p2=A;p2<A+M;p2++,p++){
+        *p = *p2;
+        N++;
+    }
+
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+  }
+
+  void tri23(){
+
+    int N;
+    do{
+        printf("\nVeillez Entrez la taillde de votre tableau : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    int T[N];
+    int *p = T;
+    printf("\nRemplissage du tableau : ");
+    for(p=T;p<T+N;p++){
+        printf("\nVeillez entrez la valeur de la case %d : ", p-T+1);
+        scanf("%d",p);
+    }
+
+    printf("\nVoici votre tableau : ");
+    for(p=T;p<T+N;p++){
+        printf(" %d | ", *p);
+    }
+
+    printf("\nVoici votre tableau trier par ordre croissant : ");
+    
+    int *p2 = T;
+    int temp;
+    for(p=T;p<T+(N-1);p++){
+        for(p2=p;p2<T+N;p2++){
+            if(*p > *p2){
+               temp = *p;
+               *p = *p2;
+               *p2 = temp;
+        }
+        }
+    }
+
+   for(p=T;p<T+N;p++){
+     printf(" %d |", *p);
+   }
+
+   for(p=T;p<T+(N-1);p++){
+     for(p2=p;p2<T+N;p2++){
+         if(*p < *p2){
+            temp = *p;
+            *p = *p2;
+            *p2 = temp;
+         }
+     }
+   }
+
+   printf("\nVoici votre deuxieme tableau : \n ");
+   for(p=T;p<T+N;p++){
+    printf(" %d |", *p);
+   }
+  }
 int main(){
    
-   fus();
+   tri23();
 
     
    return 0;
