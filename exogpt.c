@@ -95,7 +95,84 @@ void exo1(){
 
     
 }
+
+void exo2(){
+
+    int N,M;
+
+    do{
+        printf("\nVeillez entrez le nombre de lignes de la matrice : ");
+        scanf("%d", &N);
+    }while(N<=0);
+
+    do{
+        printf("\nVeillez entrez le nombre de colomnes de la matrice A : ");
+        scanf("%d", &M);
+    
+    } while(M<=0);
+
+    int A[N][M];
+    int B[N][M];
+    int i,j;
+
+    printf("\nRemplissage de la martrice A : ");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf("\nVeillez entrez la valeur [%d , %d] : ",i+1,j+1);
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("\nAffichage de la metrice A : ");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf(" %d |", A[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nRemplissage de la matrice B : ");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf("\nVeillez entrez ola valeur de la case [%d , %d] : ", i+1,j+1);
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    printf("\nAffichage de la matrice B : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf(" %d | ", B[i][j]);
+        }
+        printf("\n");
+    }
+
+    int C[N][M];
+
+    printf("\nLa somme des deux matrice est : ");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            C[i][j]=A[i][j] + B[i][j];
+            printf(" %d | ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    printf("\nLa transpose de A est : \n");
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            printf(" %d | ", A[j][i]);
+        }
+        printf("\n");
+    }
+
+
+
+
+
+
+}
 int main(){
- exo1();
+ exo2();
 return 0;
 }
