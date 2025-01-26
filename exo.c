@@ -91,14 +91,127 @@ int exo3(char c[20]){
     return(i);
 }
 
-int main(){
+void exo111(){
 
-    char c1[20];
+    char c[20];
+    
+    printf("\nVeillez entrez la chaine : ");
+    gets(c);
+    printf("\nVotre chaine est : ");puts(c);
+}
 
-    printf("\nVeillez entrez votre chaine : ");
+void exo222(){
+
+ 
+
+    char c1[20],c2[20];
+
+    printf("\nVeillez entrez la chaine 1 : ");
     gets(c1);
 
-    printf("\nLa longeur de votre chaine est : %d", exo3(c1));
+    printf("\nVeillez entrez la deuxieme chaine : ");
+    gets(c2);
+int i;
+int d = 0;
+    if(strlen(c1)==strlen(c2)){
+        for(i=0;i<strlen(c1);i++){
+            if(c1[i]!=c2[i]){
+              d++;
+            }
+        }
+        printf("\nLa distance de haming entre %s et %s est : %d", c1, c2, d);
+         
+            }else{
+                printf("\nNous ne pouvons pas calculer la distance de haming");
+            }
+}
+
+void exo33(){
+
+    int i;
+    char c1[20];
+
+    printf("\nVeillez entrez votre chaine de caaracter : ");
+    gets(c1);
+
+    int l = 0;
+    for(i=0;c1[i]!='\0';i++){
+       l++;
+    }
+
+    if(l==0){
+        printf("\nErreur de saisie");
+    }else{
+        printf("\nLa longeur de votre chaine est : %d", l);
+    }
+}
+
+void exo4(){
+
+    int i;
+
+    char c[20];
+    int T[20];
+
+    
+
+ 
+
+    printf("\nVeuillez saisir votre chaine : ");
+    gets(c);
+
+    int j;
+    int N=0;
+
+    for(i=0;i<20;i++){
+        T[i]=-1;
+    }
+
+    for(i=0;c[i]!='\0';i++){
+        int cpt = 1;
+        for(j=i+1;c[j]!='\0';j++){
+            if(c[i]==c[j]){
+                   cpt++;
+                   T[j]==0;
+            }
+        }
+        if(T[i]!=0){
+        T[i]=cpt;
+
+        }
+        N++;
+    }
+
+        int max = T[0];
+        int mi = 0;
+
+   
+
+    for(i=1;i<N;i++){
+        if(max<T[i]){
+            max = T[i];
+            mi = i;
+        }
+        
+    }
+
+    printf("\nVoici le tableau des repitions : \n");
+    for(i=0;i<N;i++){
+
+        printf(" %d | ", T[i]);
+    }
+
+    if(max==1){
+        printf("\nIl n'ya aucun caractere qui se repete");
+    }else {
+        printf("\nLe caractere qui se repete le plus est : %c et il se repete %d fois", c[mi], max);
+    }
+
+}
+
+int main(){
+
+    exo4();
 
     return 0;
 }
