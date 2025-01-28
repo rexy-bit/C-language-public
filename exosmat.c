@@ -1103,6 +1103,92 @@ void progg(){
 
 }
 
+void aff(int T[], int N){
+int i;
+    printf("\nVoici votre tableau : \n");
+    for(i=0;i<N;i++){
+        printf(" %d | ", T[i]);
+    }
+}
+void supri(int T[], int N){
+
+    int j,i;
+    aff(T,N);
+    printf("\nVeillez entrez le numero de la case que vous voulez supprimer : ");
+    scanf("%d", &j);
+
+    for(i=j-1;i<N-1;i++){
+        T[i]=T[i+1];
+    }
+    N--;
+    i--;
+
+}
+
+int inser(int T[N], int N){
+    int i,j;
+    int val;
+    aff(T,N);
+
+    printf("\nVeillez entrez la valeur que vous voulez inserer : ");
+    scanf("%d", &val);
+
+    printf("\nVeillez entrez la position de la valeur que vous voulez supprimer : ");
+    scanf("%d", &j);
+
+    if(j>=1 && j<=N){
+        for(i=N;i>=j;i--){
+            T[i]=T[i-1];
+        }
+        N++;
+
+    }else{
+        printf("\nLa position que vous avez entrez n'existe pas");
+    }
+
+
+}
+int dede(){
+
+    int i,j,N;
+
+    do{
+        printf("\nVeillez entrez la taille de votre tableau : ");
+        scanf("%d", &N);
+    }while(N <=0 );
+
+    int T[N];
+
+    printf("\nRemplissage du tableua : ");
+    for(i=0;i<N;i++){
+        printf("\nVeillez entrez la valeur de la case %d : ", i+1);
+        scanf("%d", &T[i]);
+    }
+    int op;
+
+    do{
+
+        printf("\nVeillez tapez l'operation que vous voulez choisir : ");
+        printf("\n1)Afficher le tableau");
+        printf("\n2)Afficher l'inverse du tableau : ");
+        printf("\n3)Supprimer un element du tableau : ");
+        printf("\n4)Inserer un element dans le tableau : ");
+        printf("\n5)Trier par ordre croissant les elements du tableau : ");
+        printf("\n6)Trier par ordre decroissant les elements du tableau : ");
+        printf("\nTapez 0 pour quitter le programme : ");
+
+        scanf("%d", &op);
+        
+
+
+    }
+
+
+
+    
+}
+
+
 
 int main(){
 
