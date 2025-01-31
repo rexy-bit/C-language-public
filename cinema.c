@@ -20,6 +20,7 @@ int main(){
         scanf("%d", &salles[i]);
     }
     
+    
     printf("\nVoici les salles aves pour chaque salles le nombre de places disponibles : ");
     for(i=0;i<nbrSalles;i++){
         printf("\nLe nombre de places dans la salle %d est : %d", i+1, salles[i]);
@@ -34,7 +35,7 @@ do{
        printf("\nVoici le menu du programme : ");
     printf("\n- Tapez 1 poour la reservation de places ");
     printf("\n- Tapez 2 pour afficher le nombre de places disponibles danjs chaque salle");
-    printf("\n-Tapez 3 pour quitter le programme");
+    printf("\n-Tapez 3 pour quitter le programme\n");
     scanf("%d", &operation);
 
   if(operation == 1){
