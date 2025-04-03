@@ -1,61 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "fun.h"
 
-int main(){
+main(){
 
-    int n, min,max,cpt,s,op;
-    float moy;
+    rational r1,r2;
+    rational m, a;
 
-    printf("\nVeillez entrez un nombre n : ");
-    scanf("%d", &n);
+    printf("\nEntering the information of r1 and r2 : ");
+    r1 = info(r1);
+    r2 = info(r2);
 
-    min = n;
-    max = n;
-    cpt = 0;
-    moy = 0;
-    s = 0;
-
-
-    while(n != 0){
-
-        cpt++;
-        s = s + n;
-        
-        if(n<min){
-            min = n;
-        }else if(max>n){
-            max = n;
-
-        }
-        printf("\nVEillez entrez un nombre n : ");
-        scanf("%d", &n);
-
-    }
-
-    moy = s/cpt;
-
-    printf("\nEntrez un 1 pour afficher le minimum : ");
-    printf("\nEntrez un 2 pour afficher le maximum : ");
-    printf("\nENtrez un 3 pour afficher la moyenne : \n");
-    printf("\n");
-    scanf("%d", &op);
-
-    switch(op){
-        case 1 : printf("\nLe minimum est : %d", min);
-        break;
-
-        case 2 : printf("\nLe maximum est : %d", max);
-        break;
-
-        case 3 :  printf("\nLa moyenne est : %.2f", moy);
-        break;
-
-
-        default : 
-          printf("\nLe nombre n'est pas 1 ou 2 ou 3 : veillez resaisir un autre nombre");
-          break;
-
-    }
-
-    return 0;
+    m = mult(r1,r2);
+    printf("\nThe result of multiplication is : ");
+    printf("\nNominator : %d, denominator : %d", m.num,m.den);
+     a = sum(r1,r2);
+     printf("\n\nThe result of the addition is :");
+     printf("\nNominator : %d, denominator : %d", a.num,a.den);
 
 }
